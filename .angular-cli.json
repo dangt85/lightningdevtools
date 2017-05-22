@@ -8,8 +8,10 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico"
+        { "glob": "**/*", "input": "../node_modules/@salesforce-ux/design-system/assets/icons", "output": "./slds/icons/" },
+        { "glob": "**/*", "input": "../node_modules/@salesforce-ux/design-system/assets/images", "output": "./slds/images/" },
+        { "glob": "**/*", "input": "./assets/", "output": "./assets/" },
+        { "glob": "favicon.ico", "input": "./", "output": "./" }
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,6 +21,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css",
         "styles.sass"
       ],
       "scripts": [],
