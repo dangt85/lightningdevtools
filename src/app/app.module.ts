@@ -6,11 +6,21 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MetadataComponent } from './metadata/metadata.component';
+import { DataComponent } from './data/data.component';
+import { HealthComponent } from './health/health.component';
+import { APIComponent } from './api/api.component';
+import { ApexComponent } from './apex/apex.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MetadataComponent
+    MetadataComponent,
+    DataComponent,
+    HealthComponent,
+    APIComponent,
+    ApexComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,

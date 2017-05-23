@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "ng serve -sm -w -lr -hmr -v -bh /"
+    "dev": "ng serve -o true -ec -sm -w -lr true --live-reload-client http://localhost:4200 -hmr -v -bh /"
   },
   "private": true,
   "dependencies": {
