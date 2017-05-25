@@ -7,8 +7,8 @@ describe('ng2-app App', () => {
     page = new Ng2AppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying "metadata works"', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('metadata works!');
   });
 });
