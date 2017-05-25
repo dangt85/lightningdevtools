@@ -1,5 +1,5 @@
 {
-  "name": "Lightning Developer Tools",
+  "name": "lightningdevtools",
   "description": "A set of Developer Tools for Salesforce developed with Lightning Design System and Angular 4.",
   "keywords": [
     "salesforce",
@@ -9,6 +9,15 @@
   "website": "https://github.com/dangt85/lightningdevtools",
   "repository": "https://github.com/dangt85/lightningdevtools",
   "logo": "https://starter-kit-demo.herokuapp.com/assets/logo.svg",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
