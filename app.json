@@ -1,5 +1,14 @@
 {
   "name": "lightningdevtools",
+  "description": "A set of Developer Tools for Salesforce developed with Lightning Design System and Angular 4.",
+  "keywords": [
+    "salesforce",
+    "design-system",
+    "angular4"
+  ],
+  "website": "https://github.com/dangt85/lightningdevtools",
+  "repository": "https://github.com/dangt85/lightningdevtools",
+  "logo": "https://starter-kit-demo.herokuapp.com/assets/logo.svg",
   "scripts": {
   },
   "env": {
@@ -13,5 +22,15 @@
     {
       "url": "heroku/nodejs"
     }
-  ]
+  ],
+  "env": {
+    "USERNAME": {
+      "description": "Username for basic authentication protection (optional)",
+      "required": false
+    },
+    "PASSWORD": {
+      "description": "Password for basic authentication protection (optional)",
+      "required": false
+    }
+  }
 }

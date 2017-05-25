@@ -1,35 +1,94 @@
-<header class="slds-global-header_container">
-  <a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Navigation</a>
-  <a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text--focus">Skip to Main Content</a>
-  <div class="slds-global-header slds-grid slds-grid--align-spread">
-    <div class="slds-global-header__item">
-      <div class="slds-global-header__logo">
-        <img src="/slds/images/logo-noname.svg" alt="" />
-      </div>
-    </div>
-    <div class="slds-global-header__item slds-global-header__item--search">
-      <div class="slds-form-element slds-lookup">
-        <label class="slds-assistive-text" for="global-search-01">Search Salesforce</label>
-        <div class="slds-form-element__control lookup__search-control slds-input-has-icon slds-input-has-icon--left">
-          <svg aria-hidden="true" class="slds-input__icon">
-            <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
-          </svg>
-          <input id="global-search-01" class="slds-input slds-lookup__search-input" type="search" placeholder="Search Salesforce" />
-        </div>
-      </div>
-    </div>
-    <ul class="slds-global-header__item slds-grid slds-grid--vertical-align-center">
-      <li class="slds-dropdown-trigger slds-dropdown-trigger--click slds-m-left--x-small">
-        <button class="slds-button" title="person name" aria-haspopup="true">
-          <span class="slds-avatar slds-avatar--circle slds-avatar--medium">
-            <img src="/slds/images/avatar2.jpg" alt="person name" />
-          </span>
-        </button>
-      </li>
-    </ul>
-  </div>
-</header>
+<my-app-header></my-app-header>
 
-<h1>
-  {{title}}
-</h1>
+<div class="slds-app-launcher__content slds-p-around_medium">
+  <div class="slds-section slds-is-open">
+    <h3 class="slds-section__title">
+      <button aria-controls="appsContent" aria-expanded="true" class="slds-button slds-section__title-action">
+        <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
+        </svg>
+        <span class="slds-truncate" title="All Apps">All Apps</span>
+      </button>
+    </h3>
+    <div aria-hidden="false" class="slds-section__content" id="appsContent">
+      <ul class="slds-grid slds-grid_pull-padded slds-wrap">
+        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+          <a routerLink="/metadata" class="slds-app-launcher__tile slds-text-link_reset">
+            <div class="slds-app-launcher__tile-figure">
+              <span class="slds-avatar slds-avatar_large">
+                <abbr class="slds-avatar__initials slds-icon-custom-27" title="app name">MT</abbr>
+              </span>
+            </div>
+            <div class="slds-app-launcher__tile-body">
+              <span class="slds-text-link">Metadata Tools</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                <span class="slds-text-link">More</span>
+              </p>
+            </div>
+          </a>
+        </li>
+        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+          <a routerLink="/data" class="slds-app-launcher__tile slds-text-link_reset">
+            <div class="slds-app-launcher__tile-figure">
+              <span class="slds-avatar slds-avatar_large">
+                <abbr class="slds-avatar__initials slds-icon-custom-28" title="app name">DT</abbr>
+              </span>
+            </div>
+            <div class="slds-app-launcher__tile-body">
+              <span class="slds-text-link">Data Tools</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                <span class="slds-text-link">More</span>
+              </p>
+            </div>
+          </a>
+        </li>
+        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+          <a routerLink="/health" class="slds-app-launcher__tile slds-text-link_reset">
+            <div class="slds-app-launcher__tile-figure">
+              <span class="slds-avatar slds-avatar_large">
+                <abbr class="slds-avatar__initials slds-icon-custom-29" title="app name">HC</abbr>
+              </span>
+            </div>
+            <div class="slds-app-launcher__tile-body">
+              <span class="slds-text-link">Health Checker</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                <span class="slds-text-link">More</span>
+              </p>
+            </div>
+          </a>
+        </li>
+        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+          <a routerLink="/api" class="slds-app-launcher__tile slds-text-link_reset">
+            <div class="slds-app-launcher__tile-figure">
+              <span class="slds-avatar slds-avatar_large">
+                <abbr class="slds-avatar__initials slds-icon-custom-30" title="app name">API</abbr>
+              </span>
+            </div>
+            <div class="slds-app-launcher__tile-body">
+              <span class="slds-text-link">API</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                <span class="slds-text-link">More</span>
+              </p>
+            </div>
+          </a>
+        </li>
+        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+          <a routerLink="/apex" class="slds-app-launcher__tile slds-text-link_reset">
+            <div class="slds-app-launcher__tile-figure">
+              <span class="slds-avatar slds-avatar_large">
+                <abbr class="slds-avatar__initials slds-icon-custom-31" title="app name">APEX</abbr>
+              </span>
+            </div>
+            <div class="slds-app-launcher__tile-body">
+              <span class="slds-text-link">Apex</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                <span class="slds-text-link">More</span>
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
