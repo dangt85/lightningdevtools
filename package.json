@@ -5,16 +5,22 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "prestart": "ng build",
+    "build": "ng build",
+    "postinstall": "ng build --aot -prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "dev": "ng serve -o true -ec -sm -w -lr true --live-reload-client http://localhost:4200 -hmr -v -bh /"
   },
-  "private": true,
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.9"
+  },
   "dependencies": {
+    "@angular/cli": "^1.0.4",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.1.3",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
