@@ -1,11 +1,11 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from "./app-header/app-header.component";
 
-import { RouterLinkStubDirective, RouterOutletStubComponent } from './testing/router-stubs';
+import { RouterLinkStubDirective, RouterOutletStubComponent } from './testing';
 
 let comp:    AppComponent;
 let fixture: ComponentFixture<AppComponent>;
@@ -19,23 +19,6 @@ describe('AppComponent', () => {
         RouterLinkStubDirective, RouterOutletStubComponent
       ],
     })
-    .compileComponents()
-    .then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      comp    = fixture.componentInstance;
-    });
-  }));
-  tests();
-});
-
-//////// Testing w/ NO_ERRORS_SCHEMA //////
-describe('AppComponent & NO_ERRORS_SCHEMA', () => {
-  beforeEach( async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AppComponent, RouterLinkStubDirective ],
-      schemas:      [ NO_ERRORS_SCHEMA ]
-    })
-
     .compileComponents()
     .then(() => {
       fixture = TestBed.createComponent(AppComponent);
