@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { HealthComponent } from './health/health.component';
 import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppLauncherComponent } from './app-launcher/app-launcher.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     HealthComponent,
     APIComponent,
     ApexComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    AppLauncherComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [],
