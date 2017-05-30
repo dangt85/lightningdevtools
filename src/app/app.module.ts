@@ -13,6 +13,7 @@ import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppLauncherComponent } from './app-launcher/app-launcher.component';
+import { SLDSModalDirective } from './sldsmodal.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppLauncherComponent } from './app-launcher/app-launcher.component';
     APIComponent,
     ApexComponent,
     AppHeaderComponent,
-    AppLauncherComponent
+    AppLauncherComponent,
+    SLDSModalDirective
   ],
   imports: [
     BrowserModule,

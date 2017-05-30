@@ -34,7 +34,7 @@
         <div aria-hidden="false" class="slds-section__content" id="appsContent">
           <ul class="slds-grid slds-grid_pull-padded slds-wrap">
             <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-              <a routerLink="/metadata" class="slds-app-launcher__tile slds-text-link_reset">
+              <a (click)="gotoApp('/metadata')" class="slds-app-launcher__tile slds-text-link_reset">
                 <div class="slds-app-launcher__tile-figure">
                   <span class="slds-avatar slds-avatar_large">
                     <abbr class="slds-avatar__initials slds-icon-custom-27" title="app name">MT</abbr>
@@ -49,7 +49,7 @@
               </a>
             </li>
             <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-              <a routerLink="/data" class="slds-app-launcher__tile slds-text-link_reset">
+              <a (click)="gotoApp('/data')" class="slds-app-launcher__tile slds-text-link_reset">
                 <div class="slds-app-launcher__tile-figure">
                   <span class="slds-avatar slds-avatar_large">
                     <abbr class="slds-avatar__initials slds-icon-custom-28" title="app name">DT</abbr>
@@ -64,7 +64,7 @@
               </a>
             </li>
             <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-              <a routerLink="/health" class="slds-app-launcher__tile slds-text-link_reset">
+              <a (click)="gotoApp('/health')" class="slds-app-launcher__tile slds-text-link_reset">
                 <div class="slds-app-launcher__tile-figure">
                   <span class="slds-avatar slds-avatar_large">
                     <abbr class="slds-avatar__initials slds-icon-custom-29" title="app name">HC</abbr>
@@ -79,7 +79,7 @@
               </a>
             </li>
             <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-              <a routerLink="/api" class="slds-app-launcher__tile slds-text-link_reset">
+              <a (click)="gotoApp('/api')" class="slds-app-launcher__tile slds-text-link_reset">
                 <div class="slds-app-launcher__tile-figure">
                   <span class="slds-avatar slds-avatar_large">
                     <abbr class="slds-avatar__initials slds-icon-custom-30" title="app name">API</abbr>
@@ -94,7 +94,7 @@
               </a>
             </li>
             <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-              <a routerLink="/apex" class="slds-app-launcher__tile slds-text-link_reset">
+              <a (click)="gotoApp('/apex')" class="slds-app-launcher__tile slds-text-link_reset">
                 <div class="slds-app-launcher__tile-figure">
                   <span class="slds-avatar slds-avatar_large">
                     <abbr class="slds-avatar__initials slds-icon-custom-31" title="app name">APEX</abbr>

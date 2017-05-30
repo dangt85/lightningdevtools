@@ -18,8 +18,11 @@ export class AppLauncherComponent implements OnInit {
   }
 
   cancel() {
-    console.log('close');
     this.closePopup();
+  }
+
+  gotoApp(appLink: string) {
+    this.router.navigate([appLink]).then(() => this.closePopup());
   }
 
   closePopup() {
