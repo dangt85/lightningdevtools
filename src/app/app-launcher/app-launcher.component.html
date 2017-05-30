@@ -1,0 +1,117 @@
+<div class="slds-modal slds-fade-in-open slds-modal_large slds-app-launcher" role="dialog" tabindex="-1" aria-labelledby="app-launcher-header" aria-describedby="app-launcher-content">
+  <div class="slds-modal__container">
+    <header class="slds-modal__header slds-app-launcher__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+      <button (click)="cancel()" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#close"></use>
+        </svg>
+        <span class="slds-assistive-text">Close</span>
+      </button>
+      <h2 id="app-launcher-header" class="slds-text-heading_medium">App Launcher</h2>
+      <div class="slds-app-launcher__header-search">
+        <div class="slds-form-element">
+          <label for="app-launcher-search" class="slds-form-element__label slds-assistive-text">Find an app</label>
+          <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+            <svg class="slds-input__icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#search"></use>
+            </svg>
+            <input type="search" class="slds-input" id="app-launcher-search" placeholder="Find an app">
+          </div>
+        </div>
+      </div>
+      <button (click)="cancel()" class="slds-button slds-button_neutral">App Exchange</button>
+    </header>
+    <div id="app-launcher-content" class="slds-modal__content slds-app-launcher__content slds-p-around_medium">
+      <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title">
+          <button aria-controls="appsContent" aria-expanded="true" class="slds-button slds-section__title-action">
+            <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
+            </svg>
+            <span class="slds-truncate" title="All Apps">All Apps</span>
+          </button>
+        </h3>
+        <div aria-hidden="false" class="slds-section__content" id="appsContent">
+          <ul class="slds-grid slds-grid_pull-padded slds-wrap">
+            <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+              <a (click)="gotoApp('/metadata')" class="slds-app-launcher__tile slds-text-link_reset">
+                <div class="slds-app-launcher__tile-figure">
+                  <span class="slds-avatar slds-avatar_large">
+                    <abbr class="slds-avatar__initials slds-icon-custom-27" title="app name">MT</abbr>
+                  </span>
+                </div>
+                <div class="slds-app-launcher__tile-body">
+                  <span class="slds-text-link">Metadata Tools</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                    <span class="slds-text-link">More</span>
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+              <a (click)="gotoApp('/data')" class="slds-app-launcher__tile slds-text-link_reset">
+                <div class="slds-app-launcher__tile-figure">
+                  <span class="slds-avatar slds-avatar_large">
+                    <abbr class="slds-avatar__initials slds-icon-custom-28" title="app name">DT</abbr>
+                  </span>
+                </div>
+                <div class="slds-app-launcher__tile-body">
+                  <span class="slds-text-link">Data Tools</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                    <span class="slds-text-link">More</span>
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+              <a (click)="gotoApp('/health')" class="slds-app-launcher__tile slds-text-link_reset">
+                <div class="slds-app-launcher__tile-figure">
+                  <span class="slds-avatar slds-avatar_large">
+                    <abbr class="slds-avatar__initials slds-icon-custom-29" title="app name">HC</abbr>
+                  </span>
+                </div>
+                <div class="slds-app-launcher__tile-body">
+                  <span class="slds-text-link">Health Checker</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                    <span class="slds-text-link">More</span>
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+              <a (click)="gotoApp('/api')" class="slds-app-launcher__tile slds-text-link_reset">
+                <div class="slds-app-launcher__tile-figure">
+                  <span class="slds-avatar slds-avatar_large">
+                    <abbr class="slds-avatar__initials slds-icon-custom-30" title="app name">API</abbr>
+                  </span>
+                </div>
+                <div class="slds-app-launcher__tile-body">
+                  <span class="slds-text-link">API</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                    <span class="slds-text-link">More</span>
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+              <a (click)="gotoApp('/apex')" class="slds-app-launcher__tile slds-text-link_reset">
+                <div class="slds-app-launcher__tile-figure">
+                  <span class="slds-avatar slds-avatar_large">
+                    <abbr class="slds-avatar__initials slds-icon-custom-31" title="app name">APEX</abbr>
+                  </span>
+                </div>
+                <div class="slds-app-launcher__tile-body">
+                  <span class="slds-text-link">Apex</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                    <span class="slds-text-link">More</span>
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="slds-backdrop slds-backdrop_open"></div>

@@ -1,94 +1,120 @@
 <my-app-header></my-app-header>
 
-<div class="slds-app-launcher__content slds-p-around_medium">
-  <div class="slds-section slds-is-open">
-    <h3 class="slds-section__title">
-      <button aria-controls="appsContent" aria-expanded="true" class="slds-button slds-section__title-action">
-        <svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
-        </svg>
-        <span class="slds-truncate" title="All Apps">All Apps</span>
-      </button>
-    </h3>
-    <div aria-hidden="false" class="slds-section__content" id="appsContent">
-      <ul class="slds-grid slds-grid_pull-padded slds-wrap">
-        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-          <a routerLink="/metadata" class="slds-app-launcher__tile slds-text-link_reset">
-            <div class="slds-app-launcher__tile-figure">
-              <span class="slds-avatar slds-avatar_large">
-                <abbr class="slds-avatar__initials slds-icon-custom-27" title="app name">MT</abbr>
-              </span>
-            </div>
-            <div class="slds-app-launcher__tile-body">
-              <span class="slds-text-link">Metadata Tools</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-                <span class="slds-text-link">More</span>
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-          <a routerLink="/data" class="slds-app-launcher__tile slds-text-link_reset">
-            <div class="slds-app-launcher__tile-figure">
-              <span class="slds-avatar slds-avatar_large">
-                <abbr class="slds-avatar__initials slds-icon-custom-28" title="app name">DT</abbr>
-              </span>
-            </div>
-            <div class="slds-app-launcher__tile-body">
-              <span class="slds-text-link">Data Tools</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-                <span class="slds-text-link">More</span>
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-          <a routerLink="/health" class="slds-app-launcher__tile slds-text-link_reset">
-            <div class="slds-app-launcher__tile-figure">
-              <span class="slds-avatar slds-avatar_large">
-                <abbr class="slds-avatar__initials slds-icon-custom-29" title="app name">HC</abbr>
-              </span>
-            </div>
-            <div class="slds-app-launcher__tile-body">
-              <span class="slds-text-link">Health Checker</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-                <span class="slds-text-link">More</span>
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-          <a routerLink="/api" class="slds-app-launcher__tile slds-text-link_reset">
-            <div class="slds-app-launcher__tile-figure">
-              <span class="slds-avatar slds-avatar_large">
-                <abbr class="slds-avatar__initials slds-icon-custom-30" title="app name">API</abbr>
-              </span>
-            </div>
-            <div class="slds-app-launcher__tile-body">
-              <span class="slds-text-link">API</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-                <span class="slds-text-link">More</span>
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
-          <a routerLink="/apex" class="slds-app-launcher__tile slds-text-link_reset">
-            <div class="slds-app-launcher__tile-figure">
-              <span class="slds-avatar slds-avatar_large">
-                <abbr class="slds-avatar__initials slds-icon-custom-31" title="app name">APEX</abbr>
-              </span>
-            </div>
-            <div class="slds-app-launcher__tile-body">
-              <span class="slds-text-link">Apex</span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-                <span class="slds-text-link">More</span>
-              </p>
-            </div>
-          </a>
-        </li>
-      </ul>
+<main class="app-wrapper">
+    <!--
+    Boilerplate for the Dreamforce 2016 workshop:
+    "Rapid prototyping with the Design System Starter Kit and UI Kit"
+    http://sfdcworkshop.com/workshop/rapid-prototyping-with-slds/
+    -->
+
+    <!--
+    Here's picture you can put into your content.
+    Feel free to let your creativity go wild and change this image to your taste!
+    -->
+    <!-- <img src="/assets/workshop-salesforce-red.jpg" alt="" class="slds-size--2-of-3 slds-m-bottom--large" /> -->
+
+    <!-- PAGE HEADER: https://www.lightningdesignsystem.com/components/page-headers/#flavor-record-home -->
+
+    <!-- /PAGE HEADER -->
+
+    <!-- WIZARD: https://www.lightningdesignsystem.com/components/process/#flavor-wizard -->
+
+    <!-- /WIZARD -->
+
+    <!-- COLUMNS - already populated for you: https://www.lightningdesignsystem.com/components/utilities/grid/#flavor-manual-sizing -->
+    <div class="slds-grid">
+        <!-- COLUMN #1 -->
+        <div class="slds-col slds-size--3-of-4 slds-col--padded">
+            <!-- TABS: https://www.lightningdesignsystem.com/components/tabs/#flavor-default -->
+
+            <!-- /TABS -->
+            <!-- DESCRIPTION LIST: https://www.lightningdesignsystem.com/components/utilities/lists/#flavor-description-list -->
+
+            <!-- /DESCRIPTION LIST -->
+            <router-outlet></router-outlet>
+        </div>
+        <!-- /COLUMN #1 -->
+        <!-- COLUMN #2 -->
+        <div class="slds-col slds-size--1-of-4 slds-col--padded">
+            <!-- NARROW CARD: https://www.lightningdesignsystem.com/components/cards/#flavor-related-list-narrow -->
+
+            <!-- /NARROW CARD -->
+        </div>
+        <!-- /COLUMN #2 -->
     </div>
-  </div>
-</div>
-<router-outlet></router-outlet>
+    <!-- /COLUMNS -->
+</main>
+
+
+
+
+
+<footer class="slds-col slds-size-1-of-1 slds-utility-bar_container" aria-label="Utility Bar">
+    <h2 class="slds-assistive-text">Utility Bar</h2>
+    <ul class="slds-utility-bar">
+        <li class="slds-utility-bar__item">
+        <button class="slds-button slds-utility-bar__action" aria-pressed="false">
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#call"></use>
+            </svg>
+            <span class="slds-utility-bar__text">Call</span>
+        </button>
+        </li>
+        <li class="slds-utility-bar__item">
+        <button class="slds-button slds-utility-bar__action" aria-pressed="false">
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#clock"></use>
+            </svg>
+            <span class="slds-utility-bar__text">History</span>
+        </button>
+        </li>
+        <li class="slds-utility-bar__item">
+        <button class="slds-button slds-utility-bar__action" aria-pressed="false">
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#note"></use>
+            </svg>
+            <span class="slds-utility-bar__text">Notes</span>
+        </button>
+        </li>
+        <li class="slds-utility-bar__item">
+        <button class="slds-button slds-utility-bar__action" aria-pressed="false">
+            <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#omni_channel"></use>
+            </svg>
+            <span class="slds-utility-bar__text">
+            <span class="slds-m-bottom_xxx-small">Online</span>
+            <span>Omni-Channel</span>
+            </span>
+        </button>
+        </li>
+    </ul>
+    <section class="slds-utility-panel slds-grid slds-grid_vertical" role="dialog" aria-labelledby="panel-heading-01">
+        <header class="slds-utility-panel__header slds-grid slds-shrink-none">
+        <div class="slds-media slds-media_center slds-size_1-of-1">
+            <div class="slds-media__figure slds-m-right_x-small">
+            <span class="slds-icon_container">
+                <svg class="slds-icon slds-icon_small slds-icon-text-default" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#call"></use>
+                </svg>
+            </span>
+            </div>
+            <div class="slds-media__body">
+            <h2 id="panel-heading-01">Call</h2>
+            </div>
+        </div>
+        <div class="slds-col_bump-left slds-shrink-none">
+            <button class="slds-button slds-button_icon slds-button_icon" title="Close Panel">
+            <svg class="slds-button__icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#minimize_window"></use>
+            </svg>
+            <span class="slds-assistive-text">Close Panel</span>
+            </button>
+        </div>
+        </header>
+        <div class="slds-utility-panel__body">
+        <div class="slds-align_absolute-center">Utility Panel Body</div>
+        </div>
+    </section>
+</footer>
+
+<router-outlet name="popup"></router-outlet>
