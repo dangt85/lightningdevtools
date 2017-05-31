@@ -13,12 +13,10 @@ export class DataComponent implements OnInit {
   ngOnInit() {
     this.myTabs = [
       {
-        title: "Details",
-        isActive: true
+        title: "Details"
       },
       {
-        title: "Collaboration",
-        isActive: false
+        title: "Collaboration"
       }
     ];
   }
