@@ -226,52 +226,9 @@
 
   <!-- COLUMN #1 -->
   <div class="slds-col slds-size--3-of-4 slds-col--padded">
-
-    <!-- TABS: https://www.lightningdesignsystem.com/components/tabs/#flavor-default -->
-    <div class="slds-tabs--default">
-      <ul class="slds-tabs--default__nav" role="tablist">
-        <li class="slds-tabs--default__item slds-text-title--caps slds-active" title="Detail" role="presentation">
-          <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">Detail</a>
-        </li>
-        <li class="slds-tabs--default__item slds-text-title--caps" title="Collaboration" role="presentation">
-          <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">Collaboration</a>
-        </li>
-      </ul>
-      <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
-
-        <!--<img src="/slds/workshop-salesforce-red.jpg" alt="" class="slds-size--2-of-3 slds-m-bottom--large" />-->
-
-        <!-- DESCRIPTION LIST: https://www.lightningdesignsystem.com/components/utilities/lists/#flavor-description-list -->
-        <div class="slds-grid">
-          <dl class="slds-size--1-of-2">
-            <dt class="slds-text-color--weak">Organization</dt>
-            <dd class="slds-m-bottom--small">(RED) at Dreamforce</dd>
-            <dt class="slds-text-color--weak">Donation amount</dt>
-            <dd class="slds-m-bottom--small">$500</dd>
-            <dt class="slds-text-color--weak">Donation balance</dt>
-            <dd class="slds-m-bottom--small">Donation Match FY 2017</dd>
-            <dt class="slds-text-color--weak">Check number</dt>
-            <dd class="slds-m-bottom--small">1466</dd>
-          </dl>
-          <dl class="slds-size--1-of-2">
-            <dt class="slds-text-color--weak">Date of donation</dt>
-            <dd class="slds-m-bottom--small">October 10, 2016</dd>
-            <dt class="slds-text-color--weak">Method</dt>
-            <dd class="slds-m-bottom--small">Credit Card</dd>
-            <dt class="slds-text-color--weak">Match Amount</dt>
-            <dd class="slds-m-bottom--small">$500</dd>
-            <dt class="slds-text-color--weak">Reference Number</dt>
-            <dd class="slds-m-bottom--small">FD-54048</dd>
-          </dl>
-        </div>
-        <!-- /DESCRIPTION LIST -->
-      </div>
-
-      <div id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
-        <p>TODO: add some content here!</p>
-      </div>
-    </div>
-    <!-- /TABS -->
+    
+    <my-lightning-tabs [tabs]="myTabs"></my-lightning-tabs>
+    
   </div>
   <!-- /COLUMN #1 -->
 
