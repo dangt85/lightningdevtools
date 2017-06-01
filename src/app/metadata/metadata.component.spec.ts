@@ -47,7 +47,7 @@ describe('MetadataComponent', () => {
   });
 
   it('can get RouterLinks from template', () => {
-    expect(links.length).toBe(3, 'should have 3 links');
+    expect(links.length).toBe(1, 'should have 1 links');
     expect(links[0].linkParams).toEqual([ '/', { outlets: { popup: [ 'compose' ]}}], '1st link should go to Metadata');
   });
 
