@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dangt85/lightningdevtools.svg?branch=master)](https://travis-ci.org/dangt85/lightningdevtools)
 
-This is a set of Salesforce Developer tools inspired on [Ben Edward's](twitter.com/benedwards44) `sftoolkit.co` using Lightning Desing System, Angular 4, NodeJS 6.x, travis-ci, GitHub and Heroku pipelines.
+This is a set of Salesforce Developer tools inspired on [Ben Edward's](https://twitter.com/benedwards44) [Salesforce Toolkit](http://sftoolkit.co) using Lightning Desing System, Angular 4, NodeJS 6.x, travis-ci, GitHub and Heroku pipelines.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
