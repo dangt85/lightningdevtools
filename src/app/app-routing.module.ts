@@ -12,19 +12,17 @@ import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
 import { AppLauncherComponent } from './app-launcher/app-launcher.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/metadata', pathMatch: 'full' },
   { 
     path: 'metadata',  component: MetadataComponent, children: [
       {
         path: 'home', 
-        component: MetadataHomeComponent,
-        outlet: 'tool'
+        component: MetadataHomeComponent
       }, 
       {
         path: 'diff', 
-        component: MetadataDiffComponent,
-        outlet: 'tool'
+        component: MetadataDiffComponent
       }
     ] 
   },
