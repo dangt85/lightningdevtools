@@ -1,5 +1,197 @@
-<div id="metadata">
-  <p>
-    metadata works!
-  </p>
+<!--
+  Navigation Bar component
+  https://www.lightningdesignsystem.com/components/global-navigation/
+-->
+<div class="slds-context-bar">
+  <div class="slds-context-bar__primary slds-context-bar__item_divider-right">
+    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+      <div class="slds-context-bar__icon-action">
+        <button [routerLink]="['/', { outlets: { popup: ['compose'] } }]" class="slds-button slds-icon-waffle_container slds-context-bar__button" title="Description of the icon when needed">
+          <span class="slds-icon-waffle">
+            <span class="slds-r1"></span>
+            <span class="slds-r2"></span>
+            <span class="slds-r3"></span>
+            <span class="slds-r4"></span>
+            <span class="slds-r5"></span>
+            <span class="slds-r6"></span>
+            <span class="slds-r7"></span>
+            <span class="slds-r8"></span>
+            <span class="slds-r9"></span>
+          </span>
+          <span class="slds-assistive-text">Open App Launcher</span>
+        </button>
+      </div>
+      <span class="slds-context-bar__label-action slds-context-bar__app-name">
+        <span class="slds-truncate" title="App Name">Metadata Tools</span>
+      </span>
+    </div>
+  </div>
+  <nav class="slds-context-bar__secondary" role="navigation">
+    <ul class="slds-grid">
+      <li class="slds-context-bar__item">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
+          <span class="slds-truncate">Home</span>
+        </a>
+      </li>
+      <li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--hover" aria-haspopup="true">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Package Creator">
+          <span class="slds-truncate">Package Creator</span>
+        </a>
+        <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0">
+          <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1">
+            <svg aria-hidden="true" class="slds-button__icon">
+              <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+            </svg>
+            <span class="slds-assistive-text">Open menu item submenu</span>
+          </button>
+        </div>
+        <div class="slds-dropdown slds-dropdown--right">
+          <ul class="dropdown__list" role="menu">
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">
+                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+                    <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                  </svg>Main action</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__header slds-has-divider--top-space" role="separator">
+              <span class="slds-text-title--caps">Menu header</span>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Generate <code>package.xml</code></span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Generate Force.com IDE project</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Generate SFDX workspace</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--hover" aria-haspopup="true">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Deploy Tools">
+          <span class="slds-truncate">Deploy Tools</span>
+        </a>
+        <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0">
+          <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1">
+            <svg aria-hidden="true" class="slds-button__icon">
+              <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+            </svg>
+            <span class="slds-assistive-text">Open menu item submenu</span>
+          </button>
+        </div>
+        <div class="slds-dropdown slds-dropdown--right">
+          <ul class="dropdown__list" role="menu">
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">
+                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+                    <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                  </svg>Main action</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__header slds-has-divider--top-space" role="separator">
+              <span class="slds-text-title--caps">Options</span>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Simple Deploy</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Validate Package</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Deploy Package</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Create SF Deploy Button</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Create Heroku Deploy Button</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="slds-context-bar__item">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Metadata Diff">
+          <span class="slds-truncate">Metadata Diff</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
+
+<main class="app-wrapper">
+    <!--
+    Boilerplate for the Dreamforce 2016 workshop:
+    "Rapid prototyping with the Design System Starter Kit and UI Kit"
+    http://sfdcworkshop.com/workshop/rapid-prototyping-with-slds/
+    -->
+
+    <!--
+    Here's picture you can put into your content.
+    Feel free to let your creativity go wild and change this image to your taste!
+    -->
+    <!-- <img src="/assets/workshop-salesforce-red.jpg" alt="" class="slds-size--2-of-3 slds-m-bottom--large" /> -->
+
+    <!-- PAGE HEADER: https://www.lightningdesignsystem.com/components/page-headers/#flavor-record-home -->
+    <div class="slds-page-header">
+      <div class="slds-media">
+        <div class="slds-media__figure">
+          <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+            <svg class="slds-icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="slds-media__body">
+          <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">Rohde Corp - 80,000 Widgets</h1>
+          <p class="slds-text-body_small slds-line-height_reset">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
+        </div>
+      </div>
+    </div>
+    <!-- /PAGE HEADER -->
+
+    <!-- WIZARD: https://www.lightningdesignsystem.com/components/process/#flavor-wizard -->
+
+    <!-- /WIZARD -->
+
+    <!-- COLUMNS - already populated for you: https://www.lightningdesignsystem.com/components/utilities/grid/#flavor-manual-sizing -->
+    <div class="slds-grid">
+        <!-- COLUMN #1 -->
+        <div class="slds-col slds-size--3-of-4 slds-col--padded">
+            <!-- TABS: https://www.lightningdesignsystem.com/components/tabs/#flavor-default -->
+
+            <!-- /TABS -->
+            <!-- DESCRIPTION LIST: https://www.lightningdesignsystem.com/components/utilities/lists/#flavor-description-list -->
+
+            <!-- /DESCRIPTION LIST -->
+        </div>
+        <!-- /COLUMN #1 -->
+        <!-- COLUMN #2 -->
+        <div class="slds-col slds-size--1-of-4 slds-col--padded">
+            <!-- NARROW CARD: https://www.lightningdesignsystem.com/components/cards/#flavor-related-list-narrow -->
+
+            <!-- /NARROW CARD -->
+        </div>
+        <!-- /COLUMN #2 -->
+    </div>
+    <!-- /COLUMNS -->
+</main>
