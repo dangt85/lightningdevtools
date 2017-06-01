@@ -29,7 +29,7 @@
   <nav class="slds-context-bar__secondary" role="navigation">
     <ul class="slds-grid">
       <li class="slds-context-bar__item">
-        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
+        <a [routerLink]="[{ outlets: { tool: ['home'] } }]" class="slds-context-bar__label-action" title="Home">
           <span class="slds-truncate">Home</span>
         </a>
       </li>
@@ -130,7 +130,7 @@
         </div>
       </li>
       <li class="slds-context-bar__item">
-        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Metadata Diff">
+        <a [routerLink]="[{ outlets: { tool: ['diff'] } }]" class="slds-context-bar__label-action" title="Metadata Diff">
           <span class="slds-truncate">Metadata Diff</span>
         </a>
       </li>
@@ -176,22 +176,10 @@
     <!-- COLUMNS - already populated for you: https://www.lightningdesignsystem.com/components/utilities/grid/#flavor-manual-sizing -->
     <div class="slds-grid">
         <!-- COLUMN #1 -->
-        <div class="slds-col slds-size--3-of-4 slds-col--padded">
-            <!-- TABS: https://www.lightningdesignsystem.com/components/tabs/#flavor-default -->
+        <div class="slds-col slds-col--padded">
 
-            <!-- /TABS -->
-            <!-- DESCRIPTION LIST: https://www.lightningdesignsystem.com/components/utilities/lists/#flavor-description-list -->
-
-            <!-- /DESCRIPTION LIST -->
         </div>
         <!-- /COLUMN #1 -->
-        <!-- COLUMN #2 -->
-        <div class="slds-col slds-size--1-of-4 slds-col--padded">
-            <!-- NARROW CARD: https://www.lightningdesignsystem.com/components/cards/#flavor-related-list-narrow -->
-
-            <!-- /NARROW CARD -->
-        </div>
-        <!-- /COLUMN #2 -->
     </div>
     <!-- /COLUMNS -->
 </main>
