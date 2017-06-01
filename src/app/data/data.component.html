@@ -1,3 +1,355 @@
-<p>
-  data works!
-</p>
+<!--
+  Navigation Bar component
+  https://www.lightningdesignsystem.com/components/global-navigation/
+-->
+<div class="slds-context-bar">
+  <div class="slds-context-bar__primary slds-context-bar__item_divider-right">
+    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+      <div class="slds-context-bar__icon-action">
+        <button [routerLink]="['/', { outlets: { popup: ['compose'] } }]" class="slds-button slds-icon-waffle_container slds-context-bar__button" title="Description of the icon when needed">
+          <span class="slds-icon-waffle">
+            <span class="slds-r1"></span>
+            <span class="slds-r2"></span>
+            <span class="slds-r3"></span>
+            <span class="slds-r4"></span>
+            <span class="slds-r5"></span>
+            <span class="slds-r6"></span>
+            <span class="slds-r7"></span>
+            <span class="slds-r8"></span>
+            <span class="slds-r9"></span>
+          </span>
+          <span class="slds-assistive-text">Open App Launcher</span>
+        </button>
+      </div>
+      <span class="slds-context-bar__label-action slds-context-bar__app-name">
+        <span class="slds-truncate" title="App Name">Data Tools</span>
+      </span>
+    </div>
+  </div>
+  <nav class="slds-context-bar__secondary" role="navigation">
+    <ul class="slds-grid">
+      <li class="slds-context-bar__item">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
+          <span class="slds-truncate">Home</span>
+        </a>
+      </li>
+      <li class="slds-context-bar__item">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Data Diff">
+          <span class="slds-truncate">Data Diff</span>
+        </a>
+      </li>
+      <li class="slds-context-bar__item">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Mock Data Generator">
+          <span class="slds-truncate">Mock Data Generator</span>
+        </a>
+      </li>
+      <li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--hover" aria-haspopup="true">
+        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Sandbox Data Generator">
+          <span class="slds-truncate">Sandbox Data Generator</span>
+        </a>
+        <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0">
+          <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1">
+            <svg aria-hidden="true" class="slds-button__icon">
+              <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
+            </svg>
+            <span class="slds-assistive-text">Open menu item submenu</span>
+          </button>
+        </div>
+        <div class="slds-dropdown slds-dropdown--right">
+          <ul class="dropdown__list" role="menu">
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">
+                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
+                    <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                  </svg>Main action</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__header slds-has-divider--top-space" role="separator">
+              <span class="slds-text-title--caps">Options</span>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Random</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Test</span>
+              </a>
+            </li>
+            <li class="slds-dropdown__item" role="presentation">
+              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                <span class="slds-truncate">Production Masked</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<main class="app-wrapper">
+    <!--
+    Boilerplate for the Dreamforce 2016 workshop:
+    "Rapid prototyping with the Design System Starter Kit and UI Kit"
+    http://sfdcworkshop.com/workshop/rapid-prototyping-with-slds/
+    -->
+
+    <!--
+    Here's picture you can put into your content.
+    Feel free to let your creativity go wild and change this image to your taste!
+    -->
+    <!-- <img src="/slds/workshop-salesforce-red.jpg" alt="" class="slds-size--2-of-3 slds-m-bottom--large" /> -->
+
+    <!-- PAGE HEADER: https://www.lightningdesignsystem.com/components/page-headers/#flavor-record-home -->
+    <div class="slds-page-header">
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container slds-icon-standard-user" title="Description of icon when needed">
+                <svg class="slds-icon" aria-hidden="true">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#user"></use>
+                </svg>
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <p class="slds-text-title_caps slds-line-height_reset">Record Type</p>
+              <h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate" title="this should match the Record Title">Record Title</h1>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-no-flex slds-grid slds-align-top">
+          <button class="slds-button slds-button_stateful slds-button_neutral slds-not-selected" aria-live="assertive">
+            <span class="slds-text-not-selected">
+              <svg class="slds-button__icon_stateful slds-button__icon_left" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+              </svg>Follow</span>
+            <span class="slds-text-selected">
+              <svg class="slds-button__icon_stateful slds-button__icon_left" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+              </svg>Following</span>
+            <span class="slds-text-selected-focus">
+              <svg class="slds-button__icon_stateful slds-button__icon_left" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#close"></use>
+              </svg>Unfollow</span>
+          </button>
+          <div class="slds-button-group" role="group">
+            <button class="slds-button slds-button_neutral">Edit</button>
+            <button class="slds-button slds-button_neutral">Delete</button>
+            <button class="slds-button slds-button_neutral">Clone</button>
+            <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last" aria-expanded="false">
+              <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                <svg class="slds-button__icon" aria-hidden="true">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#down"></use>
+                </svg>
+                <span class="slds-assistive-text">More Actions</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="slds-grid slds-page-header__detail-row">
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 1">Field 1</p>
+          <p class="slds-text-body_regular slds-truncate" title="Description that demonstrates truncation with a long text field">Description that demonstrates truncation with a long text field.</p>
+        </li>
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field2 (3)">Field 2 (3)
+            <button class="slds-button slds-button_icon slds-button_icon" aria-haspopup="true" title="More Actions">
+              <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#down"></use>
+              </svg>
+              <span class="slds-assistive-text">More Actions</span>
+            </button>
+          </p>
+          <p class="slds-text-body_regular">Multiple Values</p>
+        </li>
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 3">Field 3</p>
+          <a href="javascript:void(0);">Hyperlink</a>
+        </li>
+        <li class="slds-page-header__detail-block">
+          <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="Field 4">Field 4</p>
+          <p>
+            <span title="Description (2-line truncation—must use JS to truncate).">Description (2-line truncat...</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <!-- /PAGE HEADER -->
+
+    <!-- WIZARD: https://www.lightningdesignsystem.com/components/process/#flavor-wizard -->
+<div class="slds-wizard slds-m-around--large" role="navigation">
+  <ol class="slds-wizard__list">
+    <li class="slds-wizard__item slds-is-active">
+      <a href="javascript:void(0);" class="slds-wizard__link">
+        <span class="slds-wizard__marker"></span>
+        <span class="slds-wizard__label slds-text-title--caps slds-truncate">Created</span>
+      </a>
+    </li>
+    <li class="slds-wizard__item slds-is-active">
+      <a href="javascript:void(0);" class="slds-wizard__link">
+        <span class="slds-wizard__marker"></span>
+        <span class="slds-wizard__label slds-text-title--caps slds-truncate">Verified</span>
+      </a>
+    </li>
+    <li class="slds-wizard__item slds-is-active">
+      <a href="javascript:void(0);" class="slds-wizard__link">
+        <span class="slds-wizard__marker"></span>
+        <span class="slds-wizard__label slds-text-title--caps slds-truncate">Pledged</span>
+      </a>
+    </li>
+    <li class="slds-wizard__item">
+      <a href="javascript:void(0);" class="slds-wizard__link">
+        <span class="slds-wizard__marker"></span>
+        <span class="slds-wizard__label slds-text-title--caps slds-truncate">Approved</span>
+      </a>
+    </li>
+    <li class="slds-wizard__item">
+      <a href="javascript:void(0);" class="slds-wizard__link">
+        <span class="slds-wizard__marker"></span>
+        <span class="slds-wizard__label slds-text-title--caps slds-truncate">Disbursed</span>
+      </a>
+    </li>
+  </ol>
+  <span class="slds-wizard__progress">
+    <span class="slds-wizard__progress-bar" style="width:50%;"></span>
+  </span>
+</div>
+    <!-- /WIZARD -->
+
+    <!-- COLUMNS - already populated for you: https://www.lightningdesignsystem.com/components/utilities/grid/#flavor-manual-sizing -->
+    <div class="slds-grid">
+
+  <!-- COLUMN #1 -->
+  <div class="slds-col slds-size--3-of-4 slds-col--padded">
+    
+    <my-lightning-tabs [tabs]="myTabs"></my-lightning-tabs>
+    
+  </div>
+  <!-- /COLUMN #1 -->
+
+  <!-- COLUMN #2 -->
+  <div class="slds-col slds-size--1-of-4 slds-col--padded">
+
+    <!-- NARROW CARD: https://www.lightningdesignsystem.com/components/cards/#flavor-related-list-narrow -->
+    <article class="slds-card slds-card--narrow">
+      <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__figure">
+            <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+              <use xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#contact"></use>
+            </svg>
+          </div>
+          <div class="slds-media__body slds-truncate">
+            <h2>
+              <a href="javascript:void(0);" class="slds-text-link--reset">
+                <span class="slds-text-heading--small">Contacts (3)</span>
+              </a>
+            </h2>
+          </div>
+        </header>
+        <div class="slds-no-flex">
+          <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small" aria-haspopup="true">
+            <svg aria-hidden="true" class="slds-button__icon">
+              <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+            <span class="slds-assistive-text">More Options</span>
+          </button>
+        </div>
+      </div>
+      <div class="slds-card__body">
+        <div class="slds-card__body--inner">
+          <div class="slds-tile slds-media">
+            <div class="slds-media__figure">
+              <a href="javascript:void(0);" class="slds-avatar slds-avatar--medium">
+                <img src="/slds/images/avatar2.jpg" alt="Lei Chan" />
+              </a>
+            </div>
+            <div class="slds-media__body">
+              <h3 class="slds-truncate" title="Lei Chan"><a href="javascript:void(0);">Lei Chan</a> <span class="slds-badge">Primary</span></h3>
+              <div class="slds-tile__detail slds-text-body--small">
+                <dl class="slds-dl--horizontal">
+                  <dt class="slds-dl--horizontal__label">
+                    <span class="slds-truncate" title="Role">Role:</span>
+                  </dt>
+                  <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <span class="slds-truncate" title="Donation Manager">Donation Manager</span>
+                  </dd>
+                  <dt class="slds-dl--horizontal__label">
+                    <span class="slds-truncate" title="Title">Title:</span>
+                  </dt>
+                  <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <span class="slds-truncate" title="President, Operations">President, Operations</span>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="slds-tile slds-media">
+            <div class="slds-media__figure">
+              <a href="javascript:void(0);" class="slds-avatar slds-avatar--medium">
+                <img src="/slds/images/avatar3.jpg" alt="Gwen Jones" />
+              </a>
+            </div>
+            <div class="slds-media__body">
+              <h3 class="slds-truncate" title="Gwen Jones"><a href="javascript:void(0);">Gwen Jones</a></h3>
+              <div class="slds-tile__detail slds-text-body--small">
+                <dl class="slds-dl--horizontal">
+                  <dt class="slds-dl--horizontal__label">
+                    <span class="slds-truncate" title="Role">Role:</span>
+                  </dt>
+                  <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <span class="slds-truncate" title="Executive Buyer">Executive Buyer</span>
+                  </dd>
+                  <dt class="slds-dl--horizontal__label">
+                    <span class="slds-truncate" title="Title">Title:</span>
+                  </dt>
+                  <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <span class="slds-truncate" title="President, Operations">President, Operations</span>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="slds-tile slds-media">
+            <div class="slds-media__figure">
+              <a href="javascript:void(0);" class="slds-avatar slds-avatar--medium">
+                <img src="/slds/images/avatar1.jpg" alt="Pete Schaffer" />
+              </a>
+            </div>
+            <div class="slds-media__body">
+              <h3 class="slds-truncate" title="Pete Schaffer"><a href="javascript:void(0);">Pete Schaffer</a></h3>
+              <div class="slds-tile__detail slds-text-body--small">
+                <dl class="slds-dl--horizontal">
+                  <dt class="slds-dl--horizontal__label">
+                    <span class="slds-truncate" title="Role">Role:</span>
+                  </dt>
+                  <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <span class="slds-truncate" title="Marketing Contact">Marketing Contact</span>
+                  </dd>
+                  <dt class="slds-dl--horizontal__label">
+                    <span class="slds-truncate" title="Title">Title:</span>
+                  </dt>
+                  <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                    <span class="slds-truncate" title="Director, Marketing">Director, Marketing</span>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slds-card__footer"><a href="javascript:void(0);">View All <span class="slds-assistive-text">entity type</span></a></div>
+    </article>
+    <!-- /NARROW CARD -->
+
+  </div>
+  <!-- /COLUMN #2 -->
+
+</div>
+<!-- /COLUMNS -->
+</main>

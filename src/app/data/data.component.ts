@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data.component.sass']
 })
 export class DataComponent implements OnInit {
+  myTabs: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.myTabs = [
+      {
+        title: "Details"
+      },
+      {
+        title: "Collaboration"
+      }
+    ];
   }
 
 }

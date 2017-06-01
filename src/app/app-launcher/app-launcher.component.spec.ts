@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppLauncherComponent } from './app-launcher.component';
 
@@ -8,9 +10,19 @@ describe('AppLauncherComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppLauncherComponent ]
+      declarations: [ 
+        AppLauncherComponent
+      ],
+      imports: [
+        RouterTestingModule,
+        NoopAnimationsModule
+      ]
     })
-    .compileComponents();
+    .compileComponents()
+    .then(() => {
+      fixture  = TestBed.createComponent(AppLauncherComponent);
+      component = fixture.componentInstance;
+    });
   }));
 
   beforeEach(() => {

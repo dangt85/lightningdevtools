@@ -13,6 +13,9 @@ import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppLauncherComponent } from './app-launcher/app-launcher.component';
+import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.component';
+import { MetadataHomeComponent } from './metadata-home/metadata-home.component';
+import { MetadataDiffComponent } from './metadata-diff/metadata-diff.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { AppLauncherComponent } from './app-launcher/app-launcher.component';
     ApexComponent,
     AppHeaderComponent,
     AppLauncherComponent,
+    LightningTabsComponent,
+    MetadataHomeComponent,
+    MetadataDiffComponent,
   ],
   imports: [
     BrowserModule,
