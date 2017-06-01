@@ -5,8 +5,9 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule }     from './app-routing.module';
 
+import { MetadataModule } from './metadata/metadata.module';
+
 import { AppComponent } from './app.component';
-import { MetadataComponent } from './metadata/metadata.component';
 import { DataComponent } from './data/data.component';
 import { HealthComponent } from './health/health.component';
 import { APIComponent } from './api/api.component';
@@ -18,7 +19,6 @@ import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.componen
 @NgModule({
   declarations: [
     AppComponent,
-    MetadataComponent,
     DataComponent,
     HealthComponent,
     APIComponent,
@@ -32,6 +32,7 @@ import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.componen
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
+    MetadataModule,
     AppRoutingModule
   ],
   providers: [],
