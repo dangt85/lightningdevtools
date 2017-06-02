@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule }     from './app-routing.module';
 
 import { MetadataModule } from './metadata/metadata.module';
+import { DataModule } from './data/data.module';
 
 import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
@@ -33,6 +34,7 @@ import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.componen
     HttpModule,
     BrowserAnimationsModule,
     MetadataModule,
+    DataModule,
     AppRoutingModule
   ],
   providers: [],

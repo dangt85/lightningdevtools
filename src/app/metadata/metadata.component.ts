@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AppTab } from '../shared';
-import { TabsService } from "../tabs.service";
+import { TabsService } from "../shared/tabs.service";
 
 @Component({
   selector: 'app-metadata',
@@ -16,7 +16,7 @@ export class MetadataComponent implements OnInit {
   constructor(private tabsService: TabsService) { }
 
   ngOnInit() {
-    this.tabsService.getTabs().then((tabs) => {
+    this.tabsService.getTabs('metadata').then((tabs) => {
       this.tabs = tabs;
       this.selectedTab = tabs[0];
     });
