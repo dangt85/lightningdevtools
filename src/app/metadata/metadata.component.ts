@@ -17,7 +17,7 @@ export class MetadataComponent implements OnInit {
   tabs: AppTab[];
   selectedTab: AppTab;
 
-  contacts: any[];
+  contacts: Array<any>;
 
   constructor(private tabsService: TabsService, private metadataService: MetadataService) { }
 
@@ -27,20 +27,22 @@ export class MetadataComponent implements OnInit {
       this.selectedTab = tabs[0];
     });
 
-    let oauth = OAuth.createInstance();
-    oauth.login("3MVG9FS3IyroMOh5pLo6sS_qz99RhYNFO7hVdpQ_ZaA8qn6pm8drQlAzFnTOSM_RmDzbgsgST90xNiv.4HP8o",
-      "https://cwc-dgtraining--sfdx.cs9.my.salesforce.com",
-      "http://localhost:4200/oauthcallback.html").then((oauthData) => {
-      DataService.createInstance(oauthData, {proxyURL: "https://dev-cors-proxy.herokuapp.com/"});
-    });
-
     this.findAll();
   }
 
   findAll() {
-    this.metadataService.findAll()
-      .then(data => this.contacts = data)
-      .catch(err => alert(err));
+    let oauth = OAuth.createInstance("3MVG9FS3IyroMOh5pLo6sS_qz99RhYNFO7hVdpQ_ZaA8qn6pm8drQlAzFnTOSM_RmDzbgsgST90xNiv.4HP8o",
+      "https://cwc-dgtraining--sfdx.cs9.my.salesforce.com",
+      "http://localhost:4200/assets/oauthcallback.html");
+    oauth.login().then((oauthData) => {
+      DataService.createInstance(oauthData, {proxyURL: "https://dev-cors-proxy.herokuapp.com/"});
+    }).then(() => {
+      this.metadataService.findAll()
+        .then(data => {
+          this.contacts = data;
+        })
+        .catch(err => alert(err));
+    });
   }
 
   goto(tab: AppTab) {

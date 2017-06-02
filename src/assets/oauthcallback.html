@@ -3,8 +3,7 @@
 <script>
     var event = new CustomEvent("oauthCallback", {"detail": window.location.href});
     window.opener.document.dispatchEvent(event);
-    alert('exit');
-    //window.close();
+    window.close();
 </script>
 </body>
 </html>
