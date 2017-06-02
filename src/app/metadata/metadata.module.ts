@@ -5,6 +5,8 @@ import { MetadataRoutingModule } from './metadata-routing.module';
 
 import { MetadataComponent } from './metadata.component';
 
+import { MetadataService } from "./metadata.service";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +14,7 @@ import { MetadataComponent } from './metadata.component';
   ],
   declarations: [
     MetadataComponent
-  ]
+  ],
+  providers: [MetadataService]
 })
 export class MetadataModule { }
