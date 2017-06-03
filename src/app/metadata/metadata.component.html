@@ -28,18 +28,11 @@
   </div>
   <nav class="slds-context-bar__secondary" role="navigation">
     <ul class="slds-grid">
-      <li *ngFor="let tab of tabs; let i = index" class="slds-context-bar__item" [class.slds-is-active]="tab == selectedTab">
+      <li *ngFor="let tab of tabs" [ngClass]="tab.classes" [class.slds-is-active]="tab === selectedTab" [attr.arial-haspopup]="tab.hasItems">
         <a (click)="goto(tab)" class="slds-context-bar__label-action" title="{{tab.name}}">
           <span class="slds-truncate">{{tab.name}}</span>
         </a>
-      </li>
-
-
-      <li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--hover" aria-haspopup="true">
-        <a href="javascript:void(0);" class="slds-context-bar__label-action" title="Package Creator">
-          <span class="slds-truncate">Package Creator</span>
-        </a>
-        <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0">
+        <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0" *ngIf="tab.hasItems">
           <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1">
             <svg aria-hidden="true" class="slds-button__icon">
               <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
@@ -47,38 +40,16 @@
             <span class="slds-assistive-text">Open menu item submenu</span>
           </button>
         </div>
-        <div class="slds-dropdown slds-dropdown--right">
+        <div class="slds-dropdown slds-dropdown--right" *ngIf="tab.hasItems">
           <ul class="dropdown__list" role="menu">
-            <li class="slds-dropdown__item" role="presentation">
+            <li class="slds-dropdown__item" role="presentation" *ngFor="let item of tab.menuItems">
               <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-                <span class="slds-truncate">
-                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-m-right--x-small">
-                    <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#add"></use>
-                  </svg>Main action</span>
-              </a>
-            </li>
-            <li class="slds-dropdown__header slds-has-divider--top-space" role="separator">
-              <span class="slds-text-title--caps">Menu header</span>
-            </li>
-            <li class="slds-dropdown__item" role="presentation">
-              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-                <span class="slds-truncate">Generate <code>package.xml</code></span>
-              </a>
-            </li>
-            <li class="slds-dropdown__item" role="presentation">
-              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-                <span class="slds-truncate">Generate Force.com IDE project</span>
-              </a>
-            </li>
-            <li class="slds-dropdown__item" role="presentation">
-              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
-                <span class="slds-truncate">Generate SFDX workspace</span>
+                <span class="slds-truncate">{{item.name}}</span>
               </a>
             </li>
           </ul>
         </div>
       </li>
-      
     </ul>
   </nav>
 </div>
@@ -97,70 +68,15 @@
     <!-- <img src="/assets/workshop-salesforce-red.jpg" alt="" class="slds-size--2-of-3 slds-m-bottom--large" /> -->
 
     <!-- PAGE HEADER: https://www.lightningdesignsystem.com/components/page-headers/#flavor-record-home -->
-    <div class="slds-page-header">
-      <div class="slds-media">
-        <div class="slds-media__figure">
-          <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
-            <svg class="slds-icon" aria-hidden="true">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
-            </svg>
-          </span>
-        </div>
-        <div class="slds-media__body">
-          <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">Rohde Corp - 80,000 Widgets</h1>
-          <p class="slds-text-body_small slds-line-height_reset">Mark Jaeckal • Unlimited Customer • 11/13/15</p>
-        </div>
-      </div>
-    </div>
     <!-- /PAGE HEADER -->
 
     <!-- WIZARD: https://www.lightningdesignsystem.com/components/process/#flavor-wizard -->
-
     <!-- /WIZARD -->
 
     <!-- COLUMNS - already populated for you: https://www.lightningdesignsystem.com/components/utilities/grid/#flavor-manual-sizing -->
     <div class="slds-grid">
       <!-- COLUMN #1 -->
-      <div class="slds-col slds-col--padded">
-        <article class="slds-card" *ngFor="let contact of contacts">
-          <div class="slds-card__header slds-grid">
-            <header class="slds-media slds-media_center slds-has-flexi-truncate">
-              <div class="slds-media__figure">
-                <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
-                  <svg class="slds-icon slds-icon_small" aria-hidden="true">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#contact"></use>
-                  </svg>
-                </span>
-              </div>
-              <div class="slds-media__body">
-                <h2>
-                  <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="{{contact.name}}">
-                    <span class="slds-text-heading_small">{{contact.name}}</span>
-                  </a>
-                </h2>
-              </div>
-            </header>
-            <div class="slds-no-flex">
-              <button class="slds-button slds-button_neutral">New</button>
-            </div>
-          </div>
-          <div class="slds-card__body slds-card__body_inner">
-            <div class="slds-grid">
-              <dl class="slds-size--1-of-2">
-                <dt class="slds-text-color--weak">Id</dt>
-                <dd class="slds-m-bottom--small">{{contact.id}}</dd>
-                <dt class="slds-text-color--weak">Email</dt>
-                <dd class="slds-m-bottom--small">{{contact.email}}</dd>
-              </dl>
-              <dl class="slds-size--1-of-2">
-                <dt class="slds-text-color--weak">Name</dt>
-                <dd class="slds-m-bottom--small">{{contact.name}}</dd>
-              </dl>
-            </div>
-          </div>
-          <footer class="slds-card__footer">Card Footer</footer>
-        </article>
-      </div>
+      
       <!-- /COLUMN #1 -->
     </div>
     <!-- /COLUMNS -->

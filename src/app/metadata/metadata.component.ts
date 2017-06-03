@@ -19,6 +19,9 @@ export class MetadataComponent implements OnInit {
 
   contacts: Array<any>;
 
+  org1: any;
+  org2: any;
+
   constructor(private tabsService: TabsService, private metadataService: MetadataService) { }
 
   ngOnInit() {
@@ -26,8 +29,6 @@ export class MetadataComponent implements OnInit {
       this.tabs = tabs;
       this.selectedTab = tabs[0];
     });
-
-    this.findAll();
   }
 
   findAll() {
