@@ -1,16 +1,18 @@
+import { AppTab, MenuItem } from "../shared/app-tab";
+
 export const tabs = [
-    { name: 'Metadata Diff' },
-    { name: 'Package Creator', menuItems: [
-        { name: 'Generate package.xml' },
-        { name: 'Generate Force.com IDE Project' },
-        { name: 'Generate SFDX Workspace' }
-    ] },
-    { name: 'Deploy Tools', menuItems: [
-        { name: 'Simple Deploy' },
-        { name: 'Validate Package' },
-        { name: 'Deploy Package' },
-        { name: 'Schedule Package Deploy' },
-        { name: 'Create SF Deploy Button' },
-        { name: 'Create Heroku Deploy Button' }
-    ] }
+    new AppTab('Metadata Diff'),
+    new AppTab('Package Creator', [
+        new MenuItem('Generate package.xml'),
+        new MenuItem('Generate Force.com IDE Project'),
+        new MenuItem('Generate SFDX Workspace')
+    ]),
+    new AppTab('Deploy Tools', [
+        new MenuItem('Simple Deploy'),
+        new MenuItem('Validate Package'),
+        new MenuItem('Deploy Package'),
+        new MenuItem('Schedule Package Deploy'),
+        new MenuItem('Create SF Deploy Button'),
+        new MenuItem('Create Heroku Deploy Button')
+    ])
 ];
