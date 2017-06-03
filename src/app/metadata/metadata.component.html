@@ -43,7 +43,7 @@
         <div class="slds-dropdown slds-dropdown--right" *ngIf="tab.hasItems">
           <ul class="dropdown__list" role="menu">
             <li class="slds-dropdown__item" role="presentation" *ngFor="let item of tab.menuItems">
-              <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+              <a (click)="goto(tab)" role="menuitem" tabindex="-1">
                 <span class="slds-truncate">{{item.name}}</span>
               </a>
             </li>
@@ -54,30 +54,33 @@
   </nav>
 </div>
 
-<main class="app-wrapper">
-    <!--
-    Boilerplate for the Dreamforce 2016 workshop:
-    "Rapid prototyping with the Design System Starter Kit and UI Kit"
-    http://sfdcworkshop.com/workshop/rapid-prototyping-with-slds/
-    -->
+<main class="app-wrapper slds-container--fluid">
+  <!-- CONTENT -->
+  <div class="slds-m-left--medium slds-m-right--medium">
+    <div class="slds-m-bottom--small">
+      <div class="slds-box slds-theme--info" role="alert">
+        <div class="slds-notify__content slds-grid">
+          <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+            <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#user"></use>
+          </svg>
+          <div class="slds-col slds-align-middle">
+            <h2 class="slds-text-heading--small ">Uses Coenraet's ForceJS library to authenticate with Salesforce using OAuth 2.0 User-Agent Flow.</h2>
+            <p>Select the type of Salesforce environment you are connecting to and click "Connect".</p>
+          </div>
+        </div>
+      </div>
 
-    <!--
-    Here's picture you can put into your content.
-    Feel free to let your creativity go wild and change this image to your taste!
-    -->
-    <!-- <img src="/assets/workshop-salesforce-red.jpg" alt="" class="slds-size--2-of-3 slds-m-bottom--large" /> -->
-
-    <!-- PAGE HEADER: https://www.lightningdesignsystem.com/components/page-headers/#flavor-record-home -->
-    <!-- /PAGE HEADER -->
-
-    <!-- WIZARD: https://www.lightningdesignsystem.com/components/process/#flavor-wizard -->
-    <!-- /WIZARD -->
-
-    <!-- COLUMNS - already populated for you: https://www.lightningdesignsystem.com/components/utilities/grid/#flavor-manual-sizing -->
-    <div class="slds-grid">
-      <!-- COLUMN #1 -->
-      
-      <!-- /COLUMN #1 -->
+      <div class="slds-box slds-theme--error" role="alert">
+        <div class="slds-notify__content slds-grid">
+          <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+            <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#warning"></use>
+          </svg>
+          <div class="slds-col slds-align-middle">
+            <h2 class="slds-text-heading--small ">MavensMate is unable to connect to Salesforce. Please re-authenticate to continue.</h2>
+            <p>This can happen if your access/refresh token have been revoked or if MavensMate is unable to retrieve your credentials from secure storage.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /COLUMNS -->
+  </div>
 </main>
