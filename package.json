@@ -11,7 +11,8 @@
     "test:dev": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "ng serve -o true -ec true -sm true -w true -lr true --live-reload-client http://localhost:4200 -hmr true -v true -bh /"
+    "dev": "ng serve -o true -ec true -sm true -w true -lr true -hmr true -v true -bh /",
+    "dev:express": "ng build -sm true -w true -v -dev | node server.js"
   },
   "engines": {
     "node": "6.7.0",
