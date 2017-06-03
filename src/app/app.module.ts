@@ -5,8 +5,10 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule }     from './app-routing.module';
 
+import { MetadataModule } from './metadata/metadata.module';
+import { DataModule } from './data/data.module';
+
 import { AppComponent } from './app.component';
-import { MetadataComponent } from './metadata/metadata.component';
 import { DataComponent } from './data/data.component';
 import { HealthComponent } from './health/health.component';
 import { APIComponent } from './api/api.component';
@@ -14,13 +16,10 @@ import { ApexComponent } from './apex/apex.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppLauncherComponent } from './app-launcher/app-launcher.component';
 import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.component';
-import { MetadataHomeComponent } from './metadata-home/metadata-home.component';
-import { MetadataDiffComponent } from './metadata-diff/metadata-diff.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MetadataComponent,
     DataComponent,
     HealthComponent,
     APIComponent,
@@ -28,14 +27,14 @@ import { MetadataDiffComponent } from './metadata-diff/metadata-diff.component';
     AppHeaderComponent,
     AppLauncherComponent,
     LightningTabsComponent,
-    MetadataHomeComponent,
-    MetadataDiffComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
+    MetadataModule,
+    DataModule,
     AppRoutingModule
   ],
   providers: [],
