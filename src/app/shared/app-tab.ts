@@ -1,5 +1,7 @@
 export class AppTab {
-    constructor(public name: string, public menuItems?: MenuItem[]) {}
+    constructor(public name: string, 
+        public description?: string,
+        public menuItems?: MenuItem[]) {}
     get classes(): any {
         return {
             'slds-context-bar__item': true,
@@ -14,5 +16,6 @@ export class AppTab {
 }
 
 export class MenuItem {
-    constructor(public name: string) {}
+    constructor(public name: string,
+        public description?: string) {}
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MetadataService } from './metadata.service'
 
-import { AppTab } from '../shared';
+import { AppTab, MenuItem } from '../shared';
 import { TabsService } from "../shared/tabs.service";
 
 import { OAuth, DataService } from "forcejs";
@@ -16,6 +16,7 @@ import { OAuth, DataService } from "forcejs";
 export class MetadataComponent implements OnInit {
   tabs: AppTab[];
   selectedTab: AppTab;
+  selectedItem: MenuItem;
 
   contacts: Array<any>;
 
@@ -46,7 +47,8 @@ export class MetadataComponent implements OnInit {
     });
   }
 
-  goto(tab: AppTab) {
+  goto(tab: AppTab, menuItem?: MenuItem) {
     this.selectedTab = tab;
+    this.selectedItem = menuItem;
   }
 }

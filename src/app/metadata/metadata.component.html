@@ -43,7 +43,7 @@
         <div class="slds-dropdown slds-dropdown--right" *ngIf="tab.hasItems">
           <ul class="dropdown__list" role="menu">
             <li class="slds-dropdown__item" role="presentation" *ngFor="let item of tab.menuItems">
-              <a (click)="goto(tab)" role="menuitem" tabindex="-1">
+              <a (click)="goto(tab, menuItem)" role="menuitem" tabindex="-1">
                 <span class="slds-truncate">{{item.name}}</span>
               </a>
             </li>
@@ -54,9 +54,102 @@
   </nav>
 </div>
 
-<main class="app-wrapper slds-container--fluid">
+<main class="app-wrapper">
+  <!-- HEADER -->
+  <div class="slds-page-header">
+    <div class="slds-media">
+      <div class="slds-media__figure">
+        <span class="slds-icon_container slds-icon-standard-product" title="{{selectedTab.name}}">
+          <svg class="slds-icon" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#product"></use>
+          </svg>
+        </span>
+      </div>
+      <div class="slds-media__body">
+        <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{{selectedTab.name}}">
+          {{selectedTab.name}}
+        </h1>
+        <p class="slds-text-body_small slds-line-height_reset" *ngIf="selectedTab.description">
+          {{selectedTab.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- /HEADER -->
+
   <!-- CONTENT -->
-  <div class="slds-m-left--medium slds-m-right--medium">
+  <div class="slds-grid slds-grid_pull-padded-large">
+    <div class="slds-col slds-p-horizontal_medium slds-align_absolute-center">
+      <form class="slds-form slds-form--stacked" action="" method="POST" id="auth-form-1">
+        <input type="hidden" name="callback" value="callback" />
+        <input type="hidden" name="param1" value="param1" />
+
+        <h1 class="slds-text-title_caps">Source</h1>
+
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="orgType1">Salesforce Environment Type</label>
+          <div class="slds-form-element__control">
+            <div class="slds-select_container">
+              <select id="orgType1" class="slds-select" name="orgType1">
+                <option value="production">Production</option>
+                <option value="developer">Developer</option>
+                <option value="sandbox">Sandbox</option>
+                <option value="prerelease">Prerelease</option>
+                <option value="custom">Custom URL</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-form-element" style="display:none;" id="instanceUrl1Wrapper">
+          <label class="slds-form-element__label" for="instanceUrl1">Salesforce Custom URL</label>
+          <div class="slds-form-element__control">
+            <input id="instanceUrl1" name="instanceUrl1" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com">
+          </div>
+        </div>
+
+        <button type="submit" class="slds-button slds-button--brand">Connect</button>
+        <button type="cancel" class="slds-button slds-button-neutral">Cancel</button>
+      </form>
+    </div>
+
+    <div class="slds-col slds-p-horizontal_medium slds-align_absolute-center">
+      <form class="slds-form slds-form--stacked" action="" method="POST" id="auth-form-2">
+        <input type="hidden" name="callback" value="callback" />
+        <input type="hidden" name="param1" value="param1" />
+
+        <h1 class="slds-text-title_caps">Target</h1>
+
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="orgType2">Salesforce Environment Type</label>
+          <div class="slds-form-element__control">
+            <div class="slds-select_container">
+              <select id="orgType2" class="slds-select" name="orgType2">
+                <option value="production">Production</option>
+                <option value="developer">Developer</option>
+                <option value="sandbox">Sandbox</option>
+                <option value="prerelease">Prerelease</option>
+                <option value="custom">Custom URL</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-form-element" style="display:none;" id="instanceUrl2Wrapper">
+          <label class="slds-form-element__label" for="instanceUrl2">Salesforce Custom URL</label>
+          <div class="slds-form-element__control">
+            <input id="instanceUrl2" name="instanceUrl2" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com">
+          </div>
+        </div>
+
+        <button type="submit" class="slds-button slds-button--brand">Connect</button>
+        <button type="cancel" class="slds-button slds-button-neutral">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <!-- /CONTENT -->
+
+  <!--<div class="slds-m-left--medium slds-m-right--medium">
     <div class="slds-m-bottom--small">
       <div class="slds-box slds-theme--info" role="alert">
         <div class="slds-notify__content slds-grid">
@@ -76,11 +169,76 @@
             <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#warning"></use>
           </svg>
           <div class="slds-col slds-align-middle">
-            <h2 class="slds-text-heading--small ">MavensMate is unable to connect to Salesforce. Please re-authenticate to continue.</h2>
+            <h2 class="slds-text-heading--small ">Unable to connect to Salesforce. Please re-authenticate to continue.</h2>
             <p>This can happen if your access/refresh token have been revoked or if MavensMate is unable to retrieve your credentials from secure storage.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+
+  <!--<div class="slds-grid slds-grid_align-center">
+      <div class="slds-container_medium">
+      <form class="slds-form slds-form--stacked" action="" method="POST" id="auth-form-1">
+        <input type="hidden" name="callback" value="callback" />
+        <input type="hidden" name="param1" value="param1" />
+
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="orgType1">Salesforce Environment Type</label>
+          <div class="slds-form-element__control">
+            <div class="slds-select_container">
+              <select id="orgType1" class="slds-select" name="orgType1">
+                <option value="production">Production</option>
+                <option value="developer">Developer</option>
+                <option value="sandbox">Sandbox</option>
+                <option value="prerelease">Prerelease</option>
+                <option value="custom">Custom URL</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-form-element" style="display:none;" id="instanceUrl1Wrapper">
+          <label class="slds-form-element__label" for="instanceUrl1">Salesforce Custom URL</label>
+          <div class="slds-form-element__control">
+            <input id="instanceUrl1" name="instanceUrl1" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com">
+          </div>
+        </div>
+
+        <button type="submit" class="slds-button slds-button--brand">Connect</button>
+        <button type="cancel" class="slds-button slds-button-neutral">Cancel</button>
+      </form>
+    </div>
+    <div class="slds-container_medium">
+      <form class="slds-form slds-form--stacked" action="" method="POST" id="auth-form-2">
+        <input type="hidden" name="callback" value="callback" />
+        <input type="hidden" name="param1" value="param1" />
+
+        <div class="slds-form-element">
+          <label class="slds-form-element__label" for="orgType2">Salesforce Environment Type</label>
+          <div class="slds-form-element__control">
+            <div class="slds-select_container">
+              <select id="orgType2" class="slds-select" name="orgType2">
+                <option value="production">Production</option>
+                <option value="developer">Developer</option>
+                <option value="sandbox">Sandbox</option>
+                <option value="prerelease">Prerelease</option>
+                <option value="custom">Custom URL</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="slds-form-element" style="display:none;" id="instanceUrl2Wrapper">
+          <label class="slds-form-element__label" for="instanceUrl2">Salesforce Custom URL</label>
+          <div class="slds-form-element__control">
+            <input id="instanceUrl2" name="instanceUrl2" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com">
+          </div>
+        </div>
+
+        <button type="submit" class="slds-button slds-button--brand">Connect</button>
+        <button type="cancel" class="slds-button slds-button-neutral">Cancel</button>
+      </form>
+    </div>
+  </div>-->
 </main>
