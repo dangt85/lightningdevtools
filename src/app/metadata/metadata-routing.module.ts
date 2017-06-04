@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetadataComponent } from './metadata.component';
 
 const routes: Routes = [
-  { path: 'metadata',  component: MetadataComponent }
+  { path: 'metadata',  component: MetadataComponent },
+  // { path: 'oauth', component: OAuthComponent, outlet: 'popup' }
 ];
 
 @NgModule({
