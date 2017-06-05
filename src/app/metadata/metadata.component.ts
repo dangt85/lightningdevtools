@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MetadataService } from './metadata.service'
 
-import { AppTab, MenuItem } from '../shared';
+import { AppTab } from '../shared';
 import { TabsService } from "../shared/tabs.service";
 
 import { SFOrg } from "../shared/sf-org";
@@ -16,7 +16,6 @@ import { SFOrg } from "../shared/sf-org";
 export class MetadataComponent implements OnInit {
   tabs: AppTab[];
   selectedTab: AppTab;
-  selectedItem: MenuItem;
 
   org1: SFOrg = new SFOrg('source');
   org2: SFOrg = new SFOrg('target');
@@ -28,10 +27,5 @@ export class MetadataComponent implements OnInit {
       this.tabs = tabs;
       this.selectedTab = tabs[0];
     });
-  }
-
-  goto(tab: AppTab, menuItem?: MenuItem) {
-    this.selectedTab = tab;
-    this.selectedItem = menuItem;
   }
 }
