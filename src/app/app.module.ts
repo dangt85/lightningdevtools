@@ -26,7 +26,7 @@ import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.componen
     ApexComponent,
     AppHeaderComponent,
     AppLauncherComponent,
-    LightningTabsComponent,
+    LightningTabsComponent
   ],
   imports: [
     BrowserModule,
