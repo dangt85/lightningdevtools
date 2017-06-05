@@ -7,6 +7,29 @@ import { TabsService } from "../shared/tabs.service";
 
 import { OAuth, DataService } from "forcejs";
 
+class SFOrg {
+  constructor(public name: string, 
+    public type: string = 'production', 
+    public oauth?: any,
+    public customURL?: string) {}
+    
+  get loginURL(): string {
+    switch (this.type) {
+      case 'production':
+        return 'https://login.salesforce.com';
+      
+      case 'sandbox':
+        return 'https://test.salesforce.com';
+      
+      case 'custom':
+        return this.customURL;
+    
+      default:
+        'https://login.salesforce.com';
+    }
+  }
+}
+
 @Component({
   selector: 'app-metadata',
   templateUrl: './metadata.component.html',
@@ -18,8 +41,8 @@ export class MetadataComponent implements OnInit {
   selectedTab: AppTab;
   selectedItem: MenuItem;
 
-  org1: any;
-  org2: any;
+  org1: SFOrg = new SFOrg('source');
+  org2: SFOrg = new SFOrg('target');
 
   constructor(private tabsService: TabsService, private metadataService: MetadataService) { }
 
@@ -30,21 +53,17 @@ export class MetadataComponent implements OnInit {
     });
   }
 
-  connect(org: string) {
+  connect(org: SFOrg) {
     let oauth = OAuth.createInstance("3MVG9FS3IyroMOh5pLo6sS_qz99RhYNFO7hVdpQ_ZaA8qn6pm8drQlAzFnTOSM_RmDzbgsgST90xNiv.4HP8o",
-      "https://cwc-dgtraining--sfdx.cs9.my.salesforce.com",
+      org.loginURL,
       "http://localhost:4200/assets/oauthcallback.html");
 
     oauth.login().then((oauthData) => {
       // login was successful, save oauthData
-      if(org === 'org1')
-        this.org1 = oauthData;
-      else if(org === 'org2')
-        this.org2 = oauthData;
+      org.oauth = oauthData;
       
-      console.log(oauthData);
       // uses connection instance for for future reference
-      DataService.createInstance(oauthData, {proxyURL: "https://dev-cors-proxy.herokuapp.com/"}, org);
+      DataService.createInstance(oauthData, {proxyURL: "https://dev-cors-proxy.herokuapp.com/"}, org.name);
     }).then(() => {
       let service = DataService.getInstance(org);
       service.resources()

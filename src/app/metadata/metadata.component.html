@@ -54,107 +54,118 @@
   </nav>
 </div>
 
-<div class="slds-grid slds-wrap">
-  <nav class="slds-col slds-size--1-of-1">
-    <!-- HEADER -->
-    <div class="slds-page-header">
-      <div class="slds-media">
-        <div class="slds-media__figure">
-          <span class="slds-icon_container slds-icon-standard-product" title="{{selectedTab.name}}">
-            <svg class="slds-icon" aria-hidden="true">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#product"></use>
-            </svg>
-          </span>
-        </div>
-        <div class="slds-media__body">
-          <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{{selectedTab.name}}">
-            {{selectedTab.name}}
-          </h1>
-          <p class="slds-text-body_small slds-line-height_reset" *ngIf="selectedTab.description">
-            {{selectedTab.description}}
-          </p>
-        </div>
-      </div>
+<!-- HEADER -->
+<div class="slds-page-header" *ngIf="selectedTab">
+  <div class="slds-media">
+    <div class="slds-media__figure">
+      <span class="slds-icon_container slds-icon-standard-product" title="{{selectedTab.name}}">
+        <svg class="slds-icon" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/standard-sprite/svg/symbols.svg#product"></use>
+        </svg>
+      </span>
     </div>
-    <!-- /HEADER -->
-  </nav>
-
-  <main class="slds-col slds-size--1-of-1">
-    <!-- CONTENT -->
-    <div class="slds-grid slds-grid_pull-padded-large">
-      <div class="slds-col slds-p-horizontal_medium slds-align_absolute-center">
-        <div class="slds-form slds-form--stacked" *ngIf="!org1">
-          <h1 class="slds-text-title_caps">Source</h1>
-          <div class="slds-form-element">
-            <label class="slds-form-element__label" for="orgType1">Salesforce Environment Type</label>
-            <div class="slds-form-element__control">
-              <div class="slds-select_container">
-                <select id="orgType1" class="slds-select" name="orgType1">
-                  <option value="production">Production</option>
-                  <option value="developer">Developer</option>
-                  <option value="sandbox">Sandbox</option>
-                  <option value="prerelease">Prerelease</option>
-                  <option value="custom">Custom URL</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="slds-form-element" style="display:none;" id="instanceUrl1Wrapper">
-            <label class="slds-form-element__label" for="instanceUrl1">Salesforce Custom URL</label>
-            <div class="slds-form-element__control">
-              <input id="instanceUrl1" name="instanceUrl1" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com">
-            </div>
-          </div>
-
-          <div class="slds-form-element">
-            <button (click)="connect('org1')" class="slds-button slds-button--brand">Connect to Source Org</button>
-          </div>
-        </div>
-
-        <div class="slds-grid" *ngIf="org1">
-          <dl class="slds-col">
-            <dt class="slds-text-color--weak">User ID:</dt>
-            <dd class="slds-m-bottom--small">{{org1.userId}}</dd>
-          </dl>
-
-          <div class="slds-form slds-form--stacked">
-            
-          </div>
-        </div>
-      </div>
-
-      <div class="slds-col slds-p-horizontal_medium slds-align_absolute-center">
-        <div class="slds-form slds-form--stacked">
-          <h1 class="slds-text-title_caps">Target</h1>
-          <div class="slds-form-element">
-            <label class="slds-form-element__label" for="orgType1">Salesforce Environment Type</label>
-            <div class="slds-form-element__control">
-              <div class="slds-select_container">
-                <select id="orgType2" class="slds-select" name="orgType2">
-                  <option value="production">Production</option>
-                  <option value="developer">Developer</option>
-                  <option value="sandbox">Sandbox</option>
-                  <option value="prerelease">Prerelease</option>
-                  <option value="custom">Custom URL</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="slds-form-element" style="display:none;" id="instanceUrl2Wrapper">
-            <label class="slds-form-element__label" for="instanceUrl2">Salesforce Custom URL</label>
-            <div class="slds-form-element__control">
-              <input id="instanceUrl2" name="instanceUrl2" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com">
-            </div>
-          </div>
-
-          <div class="slds-form-element">
-            <button (click)="connect('org2')" class="slds-button slds-button--brand">Connect to Target Org</button>
-          </div>
-        </div>
-      </div>
+    <div class="slds-media__body">
+      <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{{selectedTab.name}}">
+        {{selectedTab.name}}
+      </h1>
+      <p class="slds-text-body_small slds-line-height_reset" *ngIf="selectedTab.description">
+        {{selectedTab.description}}
+      </p>
     </div>
-    <!-- /CONTENT -->
-  </main>
+  </div>
 </div>
+<!-- /HEADER -->
+
+<!-- CONTENT -->
+<main class="slds-grid slds-p-vertical_large">
+  <div class="slds-col slds-box slds-m-horizontal_large slds-p-horizontal_large">
+    <div class="slds-form slds-form--stacked" *ngIf="!org1.oauth">
+      <h1 class="slds-text-title_caps">Source</h1>
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="orgType1">Salesforce Environment Type</label>
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select id="orgType1" class="slds-select" name="orgType1" [(ngModel)]="org1.type">
+              <option value="production">Production</option>
+              <!--<option value="developer">Developer</option>-->
+              <option value="sandbox">Sandbox</option>
+              <!--<option value="prerelease">Prerelease</option>-->
+              <option value="custom">Custom URL</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="slds-form-element" id="instanceUrl1Wrapper" *ngIf="org1.type === 'custom'">
+        <label class="slds-form-element__label" for="instanceUrl1">Salesforce Custom URL</label>
+        <div class="slds-form-element__control">
+          <input id="instanceUrl1" name="instanceUrl1" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com" [(ngModel)]="org1.customURL">
+        </div>
+      </div>
+
+      <div class="slds-form-element">
+        <span class="slds-form-element__label">Login URL</span>
+        <div class="slds-form-element__control slds-border_bottom">
+          <span class="slds-form-element__static">{{org1.loginURL}}</span>
+        </div>
+      </div>
+
+      <div class="slds-form-element">
+        <button (click)="connect(org1)" class="slds-button slds-button--brand">Connect to Source Org</button>
+      </div>
+    </div>
+
+    <div class="slds-grid" *ngIf="org1.oauth">
+      <dl class="slds-col">
+        <dt class="slds-text-color--weak">User ID:</dt>
+        <dd class="slds-m-bottom--small">{{org1.oauth.userId}}</dd>
+      </dl>
+
+      <div class="slds-form slds-form--stacked">
+        
+      </div>
+    </div>
+  </div>
+  <div class="slds-col slds-box slds-m-horizontal_large slds-p-horizontal_large">
+    <div class="slds-form slds-form--stacked" *ngIf="!org2.oauth">
+      <h1 class="slds-text-title_caps">Target</h1>
+      <div class="slds-form-element">
+        <label class="slds-form-element__label" for="orgType2">Salesforce Environment Type</label>
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select id="orgType2" class="slds-select" name="orgType2" [(ngModel)]="org2.type">
+              <option value="production">Production</option>
+              <!--<option value="developer">Developer</option>-->
+              <option value="sandbox">Sandbox</option>
+              <!--<option value="prerelease">Prerelease</option>-->
+              <option value="custom">Custom URL</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="slds-form-element" id="instanceUrl2Wrapper" *ngIf="org2.type === 'custom'">
+        <label class="slds-form-element__label" for="instanceUrl2">Salesforce Custom URL</label>
+        <div class="slds-form-element__control">
+          <input id="instanceUrl2" name="instanceUrl2" class="slds-input" type="text" placeholder="Example: https://cwc-sldsdevtools.my.salesforce.com" [(ngModel)]="org2.customURL">
+        </div>
+      </div>
+
+      <div class="slds-form-element">
+        <button (click)="connect(org2)" class="slds-button slds-button--brand">Connect to Source Org</button>
+      </div>
+    </div>
+
+    <div class="slds-grid" *ngIf="org2.oauth">
+      <dl class="slds-col">
+        <dt class="slds-text-color--weak">User ID:</dt>
+        <dd class="slds-m-bottom--small">{{org2.oauth.userId}}</dd>
+      </dl>
+
+      <div class="slds-form slds-form--stacked">
+        
+      </div>
+    </div>
+  </div>
+</main>
+<!-- /CONTENT -->
