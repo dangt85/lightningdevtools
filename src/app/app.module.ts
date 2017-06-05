@@ -9,24 +9,18 @@ import { MetadataModule } from './metadata/metadata.module';
 import { DataModule } from './data/data.module';
 
 import { AppComponent } from './app.component';
-import { DataComponent } from './data/data.component';
 import { HealthComponent } from './health/health.component';
 import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
-import { AppHeaderComponent } from './app-header/app-header.component';
-import { AppLauncherComponent } from './app-launcher/app-launcher.component';
-import { LightningTabsComponent } from './lightning-tabs/lightning-tabs.component';
+import { AppHeaderComponent } from './slds/app-header/app-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataComponent,
     HealthComponent,
     APIComponent,
     ApexComponent,
-    AppHeaderComponent,
-    AppLauncherComponent,
-    LightningTabsComponent
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,

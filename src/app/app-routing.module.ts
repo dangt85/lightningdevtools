@@ -5,7 +5,7 @@ import { DataComponent } from './data/data.component';
 import { HealthComponent } from './health/health.component';
 import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
-import { AppLauncherComponent } from './app-launcher/app-launcher.component';
+import { AppLauncherComponent } from './slds/app-launcher/app-launcher.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'metadata', pathMatch: 'full' },

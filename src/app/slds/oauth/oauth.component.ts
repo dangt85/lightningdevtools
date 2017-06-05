@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { SFOrg } from "../shared/sf-org";
+import { SFOrg } from "../../shared/sf-org";
 
 import { OAuth, DataService } from "forcejs";
 
