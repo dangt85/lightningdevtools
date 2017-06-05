@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MetadataRoutingModule } from './metadata-routing.module';
 
 import { MetadataComponent } from './metadata.component';
-import { OAuthComponent } from "../oauth/oauth.component";
+import { OAuthComponent } from "../slds/oauth/oauth.component";
 
 import { MetadataService } from "./metadata.service";
 

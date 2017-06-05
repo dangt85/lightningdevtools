@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { HealthComponent } from './health/health.component';
 import { APIComponent } from './api/api.component';
 import { ApexComponent } from './apex/apex.component';
-import { AppHeaderComponent } from './slds/app-header/app-header.component';
+import { GlobalHeaderComponent } from './slds/global-header/global-header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { AppHeaderComponent } from './slds/app-header/app-header.component';
     HealthComponent,
     APIComponent,
     ApexComponent,
-    AppHeaderComponent
+    GlobalHeaderComponent
   ],
   imports: [
     BrowserModule,
