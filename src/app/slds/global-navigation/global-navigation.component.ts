@@ -11,7 +11,6 @@ export class GlobalNavigationComponent implements OnInit {
   @Input() tabs: AppTab[];
   @Input() selectedTab: AppTab;
   @Output() selectedTabChange = new EventEmitter();
-  @Input() selectedItem: MenuItem;
 
   constructor() { }
 
@@ -21,6 +20,5 @@ export class GlobalNavigationComponent implements OnInit {
   goto(tab: AppTab, menuItem?: MenuItem) {
     this.selectedTab = tab;
     this.selectedTabChange.emit(this.selectedTab);
-    this.selectedItem = menuItem;
   }
 }
