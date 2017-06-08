@@ -11,6 +11,9 @@ import { AppLauncherComponent } from "../slds/app-launcher/app-launcher.componen
 import { GlobalNavigationComponent } from "../slds/global-navigation/global-navigation.component";
 import { OAuthComponent } from "../slds/oauth/oauth.component";
 
+import { WindowRef } from './window.wrapper';
+import { SFAPIsService } from "./sfapis.service";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -35,6 +38,9 @@ import { OAuthComponent } from "../slds/oauth/oauth.component";
     AppLauncherComponent,
     GlobalNavigationComponent,
     OAuthComponent,
+  ],
+  providers: [
+    WindowRef, SFAPIsService
   ]
 })
 export class SharedModule { }

@@ -33,14 +33,3 @@
     <button (click)="connect()" class="slds-button slds-button--brand">Connect to {{org.name}} Org</button>
   </div>
 </div>
-
-<div class="slds-grid" *ngIf="org.oauth">
-  <dl class="slds-col">
-    <dt class="slds-text-color--weak">User ID:</dt>
-    <dd class="slds-m-bottom--small">{{org.oauth.userId}}</dd>
-  </dl>
-
-  <div class="slds-form slds-form--stacked">
-    
-  </div>
-</div>

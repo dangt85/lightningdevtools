@@ -2,7 +2,8 @@ export class SFOrg {
   constructor(public name: string, 
     public type: string = 'production', 
     public oauth?: any,
-    public customURL?: string) {}
+    public customURL?: string,
+    public data?: any) {}
     
   get loginURL(): string {
     switch (this.type) {
