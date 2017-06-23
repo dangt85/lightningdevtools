@@ -30,3 +30,37 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Contributing
+
+If you want to contribute to this project and make it better, your help is very welcome. Follow these steps to make a clean pull request:
+
+- Create a personal forg of [this project](https://github.com/dangt85/lightningdevtools)
+- Clone the fork on your local machine. Your remote repo on Github is called `origin`.
+- Add the original repository as a remote called `upstream`.
+- If you created your fork a while ago be sure to pull upstream changes into your local repository.
+- Create a new branch to work on! Branch from `develop` if it exists, else from `master`.
+- Write or adapt tests as needed. If you don't like TDD, do this step before committing any changes.
+- Implement/fix your feature, comment your code.
+- Follow the code style of the project, including indentation.
+- Make sure your tests pass.
+- Add or change the documentation as needed.
+- Squash your commits into a single commit with git's [interactive rebase](https://help.github.com/articles/interactive-rebase). Create a new branch if necessary.
+- Push your branch to your fork on Github using the remote `origin`.
+- From your fork open a pull request in the correct branch. Target the project's `develop` branch if there is one, else go for `master`!
+- If the maintainer requests further changes just push them to your branch. The PR will be updated automatically.
+- Once the pull request is approved and merged you can pull the changes from `upstream` to your local repo and delete
+your extra branch(es).
+
+And last but not least: Always write your commit messages in the present tense. Your commit message should describe what the commit, when applied, does to the code – not what you did to the code.
+
+## Deploy to Heroku
+
+If you fork this project, you can configure Heroku to automatically deploy the app from your fork. You can use a single app or a pipeline. Follow these articles:
+
+- [Heroku GitHub Deploys](https://devcenter.heroku.com/articles/github-integration)
+- [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines)
+
+## Run the live project 
+
+Go to (Lightning Dev Tools)[https://lightningdevtools.herokuapp.com]

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'my-lightning-tabs',
-  templateUrl: './lightning-tabs.component.html',
-  styleUrls: ['./lightning-tabs.component.sass']
+  selector: 'slds-tabs',
+  templateUrl: './tabs.component.html',
+  styleUrls: ['./tabs.component.sass']
 })
-export class LightningTabsComponent implements OnInit {
+export class TabsComponent implements OnInit {
   @Input() tabs: any;
   selectedTab: any;
 

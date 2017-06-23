@@ -1,58 +1,4 @@
-<!--
-  Navigation Bar component
-  https://www.lightningdesignsystem.com/components/global-navigation/
--->
-<div class="slds-context-bar">
-  <div class="slds-context-bar__primary slds-context-bar__item_divider-right">
-    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
-      <div class="slds-context-bar__icon-action">
-        <button [routerLink]="['/', { outlets: { popup: ['compose'] } }]" class="slds-button slds-icon-waffle_container slds-context-bar__button" title="Description of the icon when needed">
-          <span class="slds-icon-waffle">
-            <span class="slds-r1"></span>
-            <span class="slds-r2"></span>
-            <span class="slds-r3"></span>
-            <span class="slds-r4"></span>
-            <span class="slds-r5"></span>
-            <span class="slds-r6"></span>
-            <span class="slds-r7"></span>
-            <span class="slds-r8"></span>
-            <span class="slds-r9"></span>
-          </span>
-          <span class="slds-assistive-text">Open App Launcher</span>
-        </button>
-      </div>
-      <span class="slds-context-bar__label-action slds-context-bar__app-name">
-        <span class="slds-truncate" title="App Name">Metadata Tools</span>
-      </span>
-    </div>
-  </div>
-  <nav class="slds-context-bar__secondary" role="navigation">
-    <ul class="slds-grid">
-      <li *ngFor="let tab of tabs" [ngClass]="tab.classes" [class.slds-is-active]="tab === selectedTab" [attr.arial-haspopup]="tab.hasItems">
-        <a (click)="goto(tab)" class="slds-context-bar__label-action" title="{{tab.name}}">
-          <span class="slds-truncate">{{tab.name}}</span>
-        </a>
-        <div class="slds-context-bar__icon-action slds-p-left--none" tabindex="0" *ngIf="tab.hasItems">
-          <button class="slds-button slds-button--icon slds-context-bar__button" tabindex="-1">
-            <svg aria-hidden="true" class="slds-button__icon">
-              <use xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#chevrondown"></use>
-            </svg>
-            <span class="slds-assistive-text">Open menu item submenu</span>
-          </button>
-        </div>
-        <div class="slds-dropdown slds-dropdown--right" *ngIf="tab.hasItems">
-          <ul class="dropdown__list" role="menu">
-            <li class="slds-dropdown__item" role="presentation" *ngFor="let item of tab.menuItems">
-              <a (click)="goto(tab, menuItem)" role="menuitem" tabindex="-1">
-                <span class="slds-truncate">{{item.name}}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
-</div>
+<slds-global-navigation [tabs]="tabs" [(selectedTab)]="selectedTab"></slds-global-navigation>
 
 <!-- HEADER -->
 <div class="slds-page-header" *ngIf="selectedTab">
@@ -77,8 +23,81 @@
 <!-- /HEADER -->
 
 <!-- CONTENT -->
-<main class="slds-grid slds-p-vertical_large">
-  <slds-oauth [org]="org1"></slds-oauth>
-  <slds-oauth [org]="org2"></slds-oauth>
+<main class="slds-grid slds-wrap slds-p-vertical_large">
+  <div class="slds-col slds-size_1-of-1">
+    <div class="slds-grid slds-wrap">
+      <slds-oauth [(org)]="org1"></slds-oauth>
+      <slds-oauth [(org)]="org2"></slds-oauth>
+    </div>
+  </div>
+
+  <div class="slds-col slds-size_1-of-2" *ngIf="org1 && org1.data">
+    <div class="slds-m-around_large slds-form slds-form--stacked">
+      <h1 class="slds-text-title_caps">Components</h1>
+      
+      <div class="slds-dueling-list">
+        <div class="slds-assistive-text" id="drag-live-region" aria-live="assertive"></div>
+        <div class="slds-assistive-text" id="option-drag-label">Press space bar when on an item, to move it within the list. CMD plus left and right arrow keys, to move items between lists.</div>
+        <div class="slds-dueling-list__column">
+          <span class="slds-form-element__label" id="label-353">First Category</span>
+          <div class="slds-dueling-list__options" role="application">
+            <ul aria-describedby="option-drag-label" aria-labelledby="label-353" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox" tabindex="0">
+              <li role="presentation" class="slds-listbox__item" *ngFor="let component of org1.data">
+                <span class="slds-listbox__option slds-listbox__option_plain slds-media" aria-selected="false" draggable="true" role="option" tabindex="-1">
+                  <span class="slds-truncate" title="{{component.xmlName}}">{{component.xmlName}}</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="slds-dueling-list__column">
+          <button class="slds-button slds-button_icon slds-button_icon-container" title="Up">
+            <svg class="slds-button__icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#right"></use>
+            </svg>
+            <span class="slds-assistive-text">Move Selection to Second Category</span>
+          </button>
+          <button class="slds-button slds-button_icon slds-button_icon-container" title="Down">
+            <svg class="slds-button__icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#left"></use>
+            </svg>
+            <span class="slds-assistive-text">Move Selection to First Category</span>
+          </button>
+        </div>
+        <div class="slds-dueling-list__column">
+          <span class="slds-form-element__label" id="label-358">Second Category</span>
+          <div class="slds-dueling-list__options" role="application">
+            <ul aria-describedby="option-drag-label" aria-labelledby="label-358" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox" tabindex="0">
+              <li role="presentation" class="slds-listbox__item">
+                <span class="slds-listbox__option slds-listbox__option_plain slds-media" aria-selected="false" draggable="true" role="option" tabindex="0">
+                  <span class="slds-truncate" title="Option 4">Option 4</span>
+                </span>
+              </li>
+              <li role="presentation" class="slds-listbox__item">
+                <span class="slds-listbox__option slds-listbox__option_plain slds-media" aria-selected="false" draggable="true" role="option" tabindex="-1">
+                  <span class="slds-truncate" title="Option 5">Option 5</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="slds-dueling-list__column">
+          <button class="slds-button slds-button_icon slds-button_icon-container" title="Up">
+            <svg class="slds-button__icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#up"></use>
+            </svg>
+            <span class="slds-assistive-text">Move Selection Up</span>
+          </button>
+          <button class="slds-button slds-button_icon slds-button_icon-container" title="Down">
+            <svg class="slds-button__icon" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+            <span class="slds-assistive-text">Move Selection Down</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </main>
 <!-- /CONTENT -->

@@ -1,6 +1,7 @@
 export class AppTab {
     constructor(public name: string, 
-        public description?: string,
+        public description: string,
+        public icon: string,
         public menuItems?: MenuItem[]) {}
     get classes(): any {
         return {

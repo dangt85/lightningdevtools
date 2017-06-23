@@ -1,10 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { MetadataComponent } from './metadata.component';
 
-import { RouterLinkStubDirective, RouterOutletStubComponent } from '../testing';
+import { GlobalNavigationComponent } from "../slds/global-navigation/global-navigation.component";
+import { OAuthComponent } from "../slds/oauth/oauth.component";
+
+import { RouterLinkStubDirective, RouterOutletStubComponent } from '../shared/testing';
+
+import { TabsService } from "../shared/tabs.service";
+import { SFAPIsService } from "../shared/sfapis.service";
+import { MetadataService } from "./metadata.service";
 
 describe('MetadataComponent', () => {
   let component: MetadataComponent;
@@ -17,7 +26,18 @@ describe('MetadataComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ 
         MetadataComponent,
+        GlobalNavigationComponent,
+        OAuthComponent,
         RouterLinkStubDirective, RouterOutletStubComponent
+      ],
+      providers: [
+        TabsService,
+        MetadataService,
+        SFAPIsService
+      ],
+      imports: [ 
+        FormsModule,
+        HttpModule
       ]
     })
     .compileComponents()

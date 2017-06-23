@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LightningTabsComponent } from './lightning-tabs.component';
+import { TabsComponent } from './tabs.component';
 
-describe('LightningTabsComponent', () => {
-  let component: LightningTabsComponent;
-  let fixture: ComponentFixture<LightningTabsComponent>;
+describe('TabsComponent', () => {
+  let component: TabsComponent;
+  let fixture: ComponentFixture<TabsComponent>;
 
   const myTabs = [
     {
@@ -17,13 +17,13 @@ describe('LightningTabsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LightningTabsComponent ]
+      declarations: [ TabsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LightningTabsComponent);
+    fixture = TestBed.createComponent(TabsComponent);
     component = fixture.componentInstance;
 
     component.tabs = myTabs;

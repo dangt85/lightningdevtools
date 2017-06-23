@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from '@angular/http';
 
 import { OAuthComponent } from './oauth.component';
+
+import { SFAPIsService } from "../../shared/sfapis.service";
 
 describe('OAuthComponent', () => {
   let component: OAuthComponent;
@@ -8,7 +12,14 @@ describe('OAuthComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OAuthComponent ]
+      declarations: [ OAuthComponent ],
+      providers: [
+        SFAPIsService
+      ],
+      imports: [
+        FormsModule,
+        HttpModule
+      ],
     })
     .compileComponents();
   }));

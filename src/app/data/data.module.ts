@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { DataRoutingModule } from './data-routing.module';
+import { SharedModule } from "../shared/shared.module";
+
+import { DataComponent } from "./data.component";
 
 @NgModule({
   imports: [
-    CommonModule,
-    DataRoutingModule
+    DataRoutingModule,
+    SharedModule
   ],
-  declarations: []
+  declarations: [
+    DataComponent,
+  ]
 })
 export class DataModule { }
