@@ -1,4 +1,4 @@
-<div class="slds-form slds-form--stacked" *ngIf="!org.oauth">
+<div class="slds-form slds-form--stacked" *ngIf="org && !org.oauth">
   <h1 class="slds-text-title_caps">{{org.name}}</h1>
   <div class="slds-form-element">
     <label class="slds-form-element__label" for="orgType1">Salesforce Environment Type</label>

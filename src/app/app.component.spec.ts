@@ -3,9 +3,9 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AppHeaderComponent } from "./app-header/app-header.component";
+import { GlobalHeaderComponent } from "./slds/global-header/global-header.component";
 
-import { RouterLinkStubDirective, RouterOutletStubComponent } from './testing';
+import { RouterLinkStubDirective, RouterOutletStubComponent } from './shared/testing';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -18,7 +18,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        AppHeaderComponent,
+        GlobalHeaderComponent,
         RouterLinkStubDirective, RouterOutletStubComponent
       ],
     })

@@ -1,11 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms";
 
 import { DataComponent } from './data.component';
-import { LightningTabsComponent } from '../lightning-tabs/lightning-tabs.component';
 
-import { RouterLinkStubDirective, RouterOutletStubComponent } from '../testing';
+import { GlobalNavigationComponent } from "../slds/global-navigation/global-navigation.component";
+// import { OAuthComponent } from "../slds/oauth/oauth.component";
+
+import { RouterLinkStubDirective, RouterOutletStubComponent } from '../shared/testing';
+
+import { TabsService } from "../shared/tabs.service";
 
 describe('DataComponent', () => {
   let component: DataComponent;
@@ -18,9 +23,14 @@ describe('DataComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ 
         DataComponent,
-        LightningTabsComponent,
+        GlobalNavigationComponent,
+        // OAuthComponent,
         RouterLinkStubDirective, RouterOutletStubComponent
-      ]
+      ],
+      providers: [
+        TabsService,
+      ],
+      imports: [ FormsModule ]
     })
     .compileComponents()
     .then(() => {
