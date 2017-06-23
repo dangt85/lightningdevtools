@@ -12,7 +12,7 @@
     "test:dev": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "node server.js | ng serve -o true -ec true -sm true -w true -lr true -hmr true -v true -bh /"
+    "dev": "ng serve -o true -ec true -sm true -w true -lr true -hmr true -v true -bh /"
   },
   "engines": {
     "node": "6.7.0",
