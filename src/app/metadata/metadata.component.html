@@ -42,7 +42,7 @@
           <span class="slds-form-element__label" id="label-353">First Category</span>
           <div class="slds-dueling-list__options" role="application">
             <ul aria-describedby="option-drag-label" aria-labelledby="label-353" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox" tabindex="0">
-              <li role="presentation" class="slds-listbox__item" *ngFor="let component of org1.data">
+              <li role="presentation" class="slds-listbox__item" *ngFor="let component of (org1.data | sort : 'xmlName')">
                 <span class="slds-listbox__option slds-listbox__option_plain slds-media" aria-selected="false" draggable="true" role="option" tabindex="-1">
                   <span class="slds-truncate" title="{{component.xmlName}}">{{component.xmlName}}</span>
                 </span>
@@ -80,20 +80,6 @@
               </li>
             </ul>
           </div>
-        </div>
-        <div class="slds-dueling-list__column">
-          <button class="slds-button slds-button_icon slds-button_icon-container" title="Up">
-            <svg class="slds-button__icon" aria-hidden="true">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#up"></use>
-            </svg>
-            <span class="slds-assistive-text">Move Selection Up</span>
-          </button>
-          <button class="slds-button slds-button_icon slds-button_icon-container" title="Down">
-            <svg class="slds-button__icon" aria-hidden="true">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/slds/icons/utility-sprite/svg/symbols.svg#down"></use>
-            </svg>
-            <span class="slds-assistive-text">Move Selection Down</span>
-          </button>
         </div>
       </div>
     </div>

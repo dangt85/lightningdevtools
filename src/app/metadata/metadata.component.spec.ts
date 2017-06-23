@@ -12,8 +12,9 @@ import { OAuthComponent } from "../slds/oauth/oauth.component";
 import { RouterLinkStubDirective, RouterOutletStubComponent } from '../shared/testing';
 
 import { TabsService } from "../shared/tabs.service";
-import { SFAPIsService } from "../shared/sfapis.service";
 import { MetadataService } from "./metadata.service";
+
+import { SortPipe } from "../shared/sort.pipe";
 
 describe('MetadataComponent', () => {
   let component: MetadataComponent;
@@ -28,12 +29,12 @@ describe('MetadataComponent', () => {
         MetadataComponent,
         GlobalNavigationComponent,
         OAuthComponent,
-        RouterLinkStubDirective, RouterOutletStubComponent
+        RouterLinkStubDirective, RouterOutletStubComponent,
+        SortPipe
       ],
       providers: [
         TabsService,
         MetadataService,
-        SFAPIsService
       ],
       imports: [ 
         FormsModule,

@@ -28,7 +28,7 @@ export class OAuthComponent implements OnInit {
     let oauth = OAuth.createInstance("3MVG9FS3IyroMOh5pLo6sS_qz99RhYNFO7hVdpQ_ZaA8qn6pm8drQlAzFnTOSM_RmDzbgsgST90xNiv.4HP8o",
       this.org.loginURL,
       callbackURL);
-    if(oauth != null) console.log('oauth error');
+    if(oauth == null) console.log('oauth error');
     else {
       oauth.login().then((oauthData) => {
         // login was successful, save oauthData

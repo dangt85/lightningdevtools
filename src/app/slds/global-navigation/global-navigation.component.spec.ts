@@ -13,6 +13,8 @@ import { ApexComponent } from "../../apex/apex.component";
 import { AppLauncherComponent } from "../app-launcher/app-launcher.component";
 import { OAuthComponent } from "../oauth/oauth.component";
 
+import { SortPipe } from "../../shared/sort.pipe";
+
 const routes: Routes = [
   { path: '', redirectTo: 'metadata', pathMatch: 'full' },
   { path: 'metadata', component: MetadataComponent },
@@ -44,7 +46,8 @@ describe('GlobalNavigationComponent', () => {
         APIComponent,
         ApexComponent,
         AppLauncherComponent,
-        OAuthComponent
+        OAuthComponent,
+        SortPipe
       ],
       imports: [
         RouterTestingModule.withRoutes(routes),

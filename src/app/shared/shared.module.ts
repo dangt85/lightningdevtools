@@ -12,6 +12,7 @@ import { OAuthComponent } from "../slds/oauth/oauth.component";
 
 import { WindowRef } from './window.wrapper';
 import { SFAPIsService } from "./sfapis.service";
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { SFAPIsService } from "./sfapis.service";
     AppLauncherComponent,
     GlobalNavigationComponent,
     OAuthComponent,
+    SortPipe,
   ],
   exports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { SFAPIsService } from "./sfapis.service";
     AppLauncherComponent,
     GlobalNavigationComponent,
     OAuthComponent,
+    SortPipe,
   ],
   providers: [
     WindowRef, SFAPIsService
